@@ -1,0 +1,61 @@
+page {
+  background-color:#000000;
+}
+.listName {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  background-color: #000;
+  color: #fff;
+  height: 100rpx;
+}
+
+.listName .unselected {
+  line-height: 100rpx;
+  font-size: 16px;
+  transition:all .2s;
+}
+
+.listName .selected {
+  line-height: 100rpx;
+  border-bottom: solid 2px #ffffff;
+  font-size: 20px;
+}
+
+.listItem {
+  position: relative;
+  display: flex;
+  background-color: #191919;
+  color: #fff;
+  padding: 15rpx 30rpx;
+  margin-bottom: 8rpx;
+}
+
+.listItem image {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 5px;
+  /* 去掉照片下方空白 */
+  display: block;
+  margin-right: 20rpx;
+}
+
+.listItem .name {
+  font-size: 20px;
+}
+
+.listItem .type {
+  position: absolute;
+  right: 50rpx;
+  top: 24rpx;
+  height: 76rpx;
+  width: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 12px;
+  transform: rotate(30deg);
+  border: 2px solid #fff;
+}

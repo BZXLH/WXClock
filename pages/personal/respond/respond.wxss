@@ -1,0 +1,111 @@
+/* pages/personal/respond/respond.wxss */
+page {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.nav {
+  margin: 0 130rpx;
+}
+
+.nav_inside {
+  position: relative;
+  height: 115rpx;
+  line-height: 115rpx;
+  font-size: 38rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_line {
+  position: absolute;
+  left: 330rpx;
+  bottom: 20rpx;
+  height: 6rpx;
+  transition: 0.3s ease-in-out;
+  background-color: #07C160;
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  color: #000000;
+  font-size: large;
+  display: flow-root;
+  margin-top: 25rpx;
+  width: 606rpx;
+  height: 752rpx;
+  margin-left: 72rpx;
+  border-radius: 15px;
+  backdrop-filter: blur(25px);
+  background-color: rgba(255, 255, 255, 0.623);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin: 44rpx 74rpx;
+}
+
+.title_inp {
+  border-bottom: 1px solid #000000;
+  padding: 5rpx;
+  width: 264rpx;
+}
+
+.mainText {
+  margin-top: -20rpx;
+}
+
+.mainText_inp {
+  margin-top: 20rpx;
+  margin-left: 45rpx;
+  width: 516rpx;
+  height: 550rpx;
+}
+
+.respondItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 144rpx;
+  background-image: linear-gradient(#19191948, #191919ce);
+  backdrop-filter: blur(25px);
+}
+
+.mask {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  animation: down 1s both;
+}
+
+@keyframes down {
+  from {
+    backdrop-filter: blur(30px);
+  }
+
+  to {
+    backdrop-filter: blur(0px);
+  }
+}
+
+.respond_headPhoto {
+  display: inline-block;
+  width: 96rpx;
+  height: 96rpx;
+  background-color: #2C2C2C;
+  border-radius: 8rpx;
+  margin-left: 32rpx;
+  margin-right: 24rpx;
+}
+
+.respond_info {
+  display: inline-block;
+}

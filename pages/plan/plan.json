@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "calender":"/components/calender/calender"
+  },
+  "enablePullDownRefresh": true
+
+}

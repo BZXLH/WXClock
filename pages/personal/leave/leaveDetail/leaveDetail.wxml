@@ -1,0 +1,23 @@
+<!--pages/personal/leave/leaveDetail/leaveDetail.wxml-->
+<view class="options">
+  <view class="options_tiem">
+    <view>开始时间</view>
+    <view>{{timel}}</view>
+  </view>
+  <view class="options_tiem">
+    <view>到期时间</view>
+    <view>{{time}}</view>
+  </view>
+  <view class="options_tiem">
+    <view>请假原因</view>
+    <view>{{excuse}}</view>
+  </view>
+  <view class="options_tiem">
+    <view>请假状态</view>
+    <view hidden="{{status!=0}}">待审批</view>
+    <view hidden="{{status!=1}}">通过</view>
+    <view hidden="{{status!=2}}">不通过</view>
+  </view>
+</view>
+<button hidden="{{status==0}}" bindtap="pass" style="margin-top: 44rpx;" type="primary">通过</button>
+<button hidden="{{status==0}}" bindtap="back" style="margin-top: 38rpx;background-color: #141414;color: gray;">不通过</button>

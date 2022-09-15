@@ -1,0 +1,12 @@
+<view class="container">
+  <image src='../../image/background2.png' class="bg2"></image>
+  <view class='text'>
+    <view class="add-item">计划名称 <text class="padding">{{taskName}}</text></view>
+    <view class="add-item">截止日期 <text class="padding">{{endTime}}</text></view>
+    <view class="add-item">
+      详细内容 <view class="content">{{content}}</view>
+    </view>
+  </view>
+</view>
+<button type="primary" class="finish-plan" bindtap="finishPlan">完成计划</button>
+<button type="warn" class="delete-plan" bindtap="deletePlan">删除计划</button>

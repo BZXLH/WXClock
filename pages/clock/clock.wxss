@@ -1,0 +1,35 @@
+/* pages/clock/clock.wxss */
+page {
+  height: 100%;
+}
+
+.background {
+  height: 100%;
+}
+
+.background image {
+  height: 100%;
+  width: 750rpx;
+}
+
+.detail {
+  position: absolute;
+  top: 100rpx;
+  left: 50%;
+  margin-left: -280rpx;
+  width: 560rpx;
+  height: 604rpx;
+  font-size: 18px;
+  border-radius: 32rpx;
+  background-color: rgba(255, 255, 255,.8);
+  padding: 50rpx;
+  box-sizing: border-box;
+}
+
+.btn {
+  position: absolute;
+  top: 800rpx;
+  left: 50%;
+  margin-left: -80rpx;
+  font-weight: normal;
+}

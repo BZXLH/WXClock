@@ -1,0 +1,51 @@
+.bg {
+  position: fixed;
+  top: -176rpx;
+  width: 100%;
+  height: 1338rpx;
+  z-index: -1;
+  transform: scale(1.5);
+}
+
+.finish-icon {
+  position: absolute;
+  top: 180rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.show {
+  color: #fff;
+  position: absolute;
+  top: 360rpx;
+  text-align: center;
+  font-weight: 200;
+}
+
+.new-plan,
+.plan-name {
+  font-size: 60rpx;
+  font-weight: 200;
+  padding-bottom: 20rpx;
+}
+
+.num {
+  color: rgb(85, 184, 55);
+  font-size: 40rpx;
+  padding: 10rpx;
+  font-weight: 700;
+}
+
+.back {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 30rpx;
+  width: 230rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: rgb(255, 255, 255, 0.7);
+  font-weight: 400;
+  background-color: rgb(255, 255, 255, 0.2);
+}

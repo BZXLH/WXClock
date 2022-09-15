@@ -1,0 +1,39 @@
+<!--pages/editInfo/editInfo.wxml-->
+<view class="headPhoto_wrap">
+  <button class="headPhotoBtn" open-type="chooseAvatar" bindchooseavatar="changeHeadPhoto">
+    <image class="headPhoto" mode="aspectFill" src="{{avatar}}"></image>
+    <view class="headPhoto_jiantou">
+      <image class="jiantou" src="../../../assets/jiantou.png"></image>
+    </view>
+  </button>
+</view>
+<view class="info">
+  <view class="info_item" bindtap="goToEditDetail" data-prop="nickname" data-title="昵称">
+    <view>昵称</view>
+    <view>{{nickname}}</view>
+    <view class="info_jiantou">
+      <image class="jiantou" src="../../../assets/jiantou.png"></image>
+    </view>
+  </view>
+  <view class="info_item" bindtap="goToEditDetail" data-prop="username" data-title="姓名">
+    <view>真实姓名</view>
+    <view>{{username}}</view>
+    <view class="info_jiantou">
+      <image class="jiantou" src="../../../assets/jiantou.png"></image>
+    </view>
+  </view>
+  <view class="info_item" bindtap="goToEditDetail" data-prop="studentId" data-title="学号">
+    <view>学号</view>
+    <view>{{studentId}}</view>
+    <view class="info_jiantou">
+      <image class="jiantou" src="../../../assets/jiantou.png"></image>
+    </view>
+  </view>
+  <view class="info_item" bindtap="goToEditDetail" data-prop="grade" data-title="年级">
+    <view>年级</view>
+    <view>{{grade+"级"}}</view>
+    <view class="info_jiantou">
+      <image class="jiantou" src="../../../assets/jiantou.png"></image>
+    </view>
+  </view>
+</view>
