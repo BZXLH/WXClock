@@ -1,0 +1,59 @@
+Page {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+/* 没有数据是展示的盒子 */
+.noData {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* 没有数据时展示的图片 */
+.noDataPic {
+  width: 348rpx;
+  height: 404rpx;
+}
+
+/* 没有数据时展示的文字 */
+.noDataInfo {
+  margin-top: 30rpx;
+  color: white;
+  font-size: 36rpx;
+}
+
+.reportList {
+  background-color: #191919;
+}
+
+.report {
+  display: flex;
+  padding: 24rpx 30rpx;
+  height: 144rpx;
+  background-color: #191919;
+  align-items: center;
+}
+
+.title {
+  margin: 8rpx 0;
+  font-size: 34rpx;
+  color: #bfbfbf;
+} 
+
+.time {
+  font-size: 28rpx;
+  color: #5e5e5e;
+}
+
+
+.head {
+  margin-right: 20rpx;
+  width: 96rpx;
+  height: 96rpx;
+  background-color: #2c2c2c;
+  border-radius: 8rpx;
+}

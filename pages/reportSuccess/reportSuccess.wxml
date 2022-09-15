@@ -1,0 +1,23 @@
+<!--pages/reportSuccess/reportSuccess.wxml-->
+<image src="../../image/rocket.png" class="rocket"></image>
+
+<view class="container">
+  <image src="../../image/background1.png" class="bac"></image>
+
+  <view class="blackBox">
+    <view class="icon">
+    <icon class="icon-box-img" type="success" size="128rpx"></icon>
+    </view>
+
+    <view class="msg">
+      <view class="successTitle">周记上传成功</view>
+      <view class="reportNum">这是你第{{query.num? query.num : 0}}个周记!</view>
+    </view>
+
+    <view class="btn">
+      <button id="otherReport" bindtap="GotoOtherReport">查看往期周报</button>
+      <button id="backButton" bindtap="goBack">返回</button>
+    </view>
+
+  </view>  
+</view>

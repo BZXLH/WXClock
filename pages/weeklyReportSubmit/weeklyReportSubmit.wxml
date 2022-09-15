@@ -1,0 +1,17 @@
+<!-- 页面的背景图 -->
+<image src="../../image/background1.png" class="bac"></image>
+
+
+<view class="reportContainer">
+  <view class="submit">
+    <!-- 背景虚化效果 -->
+    <view class="bacColor"></view>
+
+    <!-- 输入周记内容 -->
+    <textarea class="weeklyReportSubmit" placeholder="请输入您的周记内容" placeholder-class="hint" value="{{weeklyReportContent}}"  bindinput="inputReport"></textarea>
+
+    <!-- 上传周记按钮 -->
+    <button id="submitWeeklyReport" bindtap="submit">{{isUpload ? '上传中' : '上传周报'}}<text class="loader" wx:if="{{isUpload}}"></text></button>
+
+  </view>
+</view>

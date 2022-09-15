@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "第X周周报",
+  "navigationBarBackgroundColor": "#000",
+  "enablePullDownRefresh": true
+}

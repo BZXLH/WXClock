@@ -1,0 +1,67 @@
+<!-- 页面的背景图 -->
+<image src="../../image/background1.png" class="bac"></image>
+
+
+<view class="reportContainer">
+    <!-- 基本情况 -->
+    <view class="basicInfo">
+      <!-- 背景虚化效果 -->
+      <view class="bacColor"></view>
+
+      <view class="info">
+        <view class="infoItem">
+          <view class="title">本周打卡天数</view>
+          <view class="content">{{clockCount}}天</view>
+        </view>
+
+        <view class="infoItem">
+          <view class="title">本周学习时长</view>
+          <view class="content">{{studyDuration}}小时</view>
+        </view>
+
+        <view class="infoItem">
+          <view class="title">本周完成计划</view>
+          <view class="content">{{finishedTaskCount}}个</view>
+        </view>
+
+      </view>
+
+    </view>
+
+    <!-- 完成计划一览 -->
+    <view class="finishedPlan">
+      <!-- 背景虚化效果 -->
+      <view class="bacColor"></view>
+      <!-- 标题 -->
+      <view class="planTitle">本周完成计划一览</view>
+      <!-- 完成的计划 -->
+      <scroll-view class="finishedPlanList" scroll-y>
+        <view class="finishedPlanItem" wx:for="{{completedPlan}}" wx:key="index" wx:if="{{completedPlan}}">
+          <text class="left">{{item.taskName}}</text>
+          <text class="right">{{item.endTime}}</text>
+        </view>
+      </scroll-view>
+      <view class="error" wx:if="{{!completedPlan[0]}}">您本周没有完成的计划哟</view>
+    </view>
+
+    <!-- 周记 -->
+    <view class="weeklyReport" bindtap="gotoWeeklyReport">
+      <!-- 背景虚化效果 -->
+      <view class="bacColor"></view>
+
+      <!-- 标题 -->
+      <view class="weeklyReportTitle">本周周记</view>
+
+      <!-- 周报内容 -->
+      <view class="weeklyReportBox">
+        <view class="weeklyReportContent" wx:if="{{preWeeklyReportContent}}">{{preWeeklyReportContent}}</view>
+      </view>
+
+      <!-- 错误 -->
+      <view class="weeklyReportError" wx:if="{{!preWeeklyReportContent}}">您还未填写本周周记，点击填写</view>
+  </view>
+
+  <view class="btn">
+    <button id="checkBtn" bindtap="GotoOtherReport">查看往期周报</button>
+  </view>
+</view>

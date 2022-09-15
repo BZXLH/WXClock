@@ -1,0 +1,97 @@
+/* pages/reportSuccess/reportSuccess.wxss */
+@keyframes rocketMove {
+  0% {
+    top: 1206rpx;
+  }
+  100% {
+    top: -772rpx;
+  }
+}
+
+Page {
+  background-color: black;
+  height: 100%;
+}
+
+/* 外层容器 */
+.container {
+  position: relative;
+  height: 100%;
+  padding: 0 !important;
+}
+
+.bac {
+  position: absolute;
+  top: -1rpx;
+  left: -1rpx;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+
+}
+
+.rocket {
+  position: absolute;
+  top: 1206rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 104rpx;
+  height: 772rpx;
+  z-index: -1;
+  animation: rocketMove 1s  .3s  ease-in forwards;
+  transition: all 1s;
+}
+
+.blackBox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 65%;
+  height: 65%;
+  border-radius: 32rpx;
+  background: rgba(0, 0, 0, .6);
+}
+
+.icon {
+  margin-top: 80rpx;
+  text-align: center;
+  height: 128rpx;
+}
+
+.msg {
+  margin-top: 70rpx;
+  color: white;
+}
+
+.successTitle,
+.reportNum {
+  text-align: center;
+}
+
+.successTitle {
+  margin-bottom: 16rpx;
+  font-size: 56rpx;
+}
+
+.reportNum {
+  font-size: 28rpx;
+}
+
+.btn {
+  margin-top: 100rpx;
+}
+
+#otherReport,
+#backButton {
+  width: 300rpx;
+  height: 80rpx;
+  background: rgba(255, 255, 255, .1);
+  color: #d4d3d8;
+  border-radius: 8rpx;
+  font-size: 34rpx;
+  font-weight: 400;
+}
+
+#otherReport {
+  margin-bottom: 50rpx;
+}
