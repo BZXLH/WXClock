@@ -1,0 +1,25 @@
+<!--pages/list/list.wxml-->
+<view class="listName">
+  <view class="{{getAll}}" bindtap="showAllList">所有人</view>
+  <view class="{{getMy}}" bindtap="showMyList">只看自己</view>
+</view>
+<scroll-view hidden="{{!listCondition}}" style="background-color: #000;" id="scroll1">
+  <view class="listItem" wx:for="{{allList}}" wx:key="index">
+    <view><image src="{{item.avatar}}"></image></view>
+    <view> 
+      <view class="name">{{item.username}}</view>
+      <view class="time">{{item.clockTime}}</view>
+    </view>
+    <view class="type" style="border: 2px solid {{item.clockinType.color}}; color: {{item.clockinType.color}};">{{item.clockinType.type}}</view>
+  </view>
+</scroll-view>
+<scroll-view hidden="{{listCondition}}" style="background-color: #000;" id="scroll2">
+  <view class="listItem" wx:for="{{myList}}" wx:key="index">
+    <view><image src="{{item.avatar}}"></image></view>
+    <view> 
+      <view class="name">{{item.username}}</view>
+      <view class="time">{{item.clockTime}}</view>
+    </view>
+    <view class="type" style="border: 2px solid {{item.clockinType.color}}; color: {{item.clockinType.color}};">{{item.clockinType.type}}</view>
+  </view>
+</scroll-view>

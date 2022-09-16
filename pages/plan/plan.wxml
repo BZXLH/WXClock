@@ -1,0 +1,20 @@
+<!--pages/plan/plan.wxml-->
+<image src='../../image/background1.png' class="bg"></image>
+<calender class="calender"></calender>
+<navigator url="/pages/addplan/addplan" open-type="navigate" class="add-plan">
+  <image src="../../images/ball/4.png"></image>
+  <text>+</text>
+</navigator>
+<!-- 任务 -->
+<view id="plan" wx:for="{{planArray}}" wx:key="index">
+  <view class="plan-item" bindtap="editPlan" data-index="{{index}}" data-id="{{item.id}}">
+    <view class="plan-icon">
+      <image src="../../images/ball/{{iconArray[index]}}.png" mode='heightFix'></image>
+    </view>
+    <view class="plan-detail">
+      <view class="plan-name">{{item.taskName}}</view>
+      <view class="plan-content">{{item.content}}</view>
+    </view>
+    <view class="{{dayIntervalArray[index]>0?'plan-ddl':'plan-fail'}}">{{dayIntervalArray[index]}}天</view>
+  </view>
+</view>

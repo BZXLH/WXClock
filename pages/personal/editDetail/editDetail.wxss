@@ -1,0 +1,45 @@
+/* pages/personal/editDetail/editDetail.wxss */
+page {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.editDetail_input {
+  border-bottom: 1px solid #07C160;
+  font-size: large;
+  margin: 50rpx 30rpx;
+  padding: 10rpx 20rpx;
+  caret-color: #07C160
+}
+
+.radio_wrap {
+  margin-bottom: 20rpx;
+}
+
+.radio {
+  display: block;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 30rpx;
+  border-top: 1px solid #000000;
+  background-color: #191919;
+  font-size: large;
+}
+
+/* 未选中背景样式 */
+radio .wx-radio-input {
+  background-color: transparent !important;
+  border-color: transparent !important
+}
+
+/* 选中背景样式 */
+radio .wx-radio-input.wx-radio-input-checked {
+  background-color: transparent !important;
+  border-color: transparent !important
+}
+
+/* 选中内容样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  font-size: 60rpx;
+  color: #07C160;
+}

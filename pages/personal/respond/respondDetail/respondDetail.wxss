@@ -1,0 +1,46 @@
+/* pages/personal/respond/respondDetail/respondDetail.wxss */
+page {
+  display: flow-root;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+
+.main {
+  color: #000000;
+  font-size: large;
+  display: flow-root;
+  margin-top: 32rpx;
+  width: 606rpx;
+  height: 752rpx;
+  margin-left: 72rpx;
+  border-radius: 15px;
+  backdrop-filter: blur(25px);
+  background-color: rgba(255, 255, 255, 0.623);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 44rpx 74rpx;
+}
+
+.mainText {
+  margin-top: -20rpx;
+}
+
+.mainText_inp {
+  margin-top: 20rpx;
+  margin-left: 45rpx;
+  width: 516rpx;
+  height: 550rpx;
+  text-indent: 2rem;
+}

@@ -1,0 +1,33 @@
+Page {
+  background-color: #000;
+}
+
+
+
+.report {
+  display: flex;
+  padding: 24rpx 30rpx;
+  height: 144rpx;
+  background-color: #191919;
+  align-items: center;
+}
+
+.title {
+  margin: 8rpx 0;
+  font-size: 34rpx;
+  color: #bfbfbf;
+} 
+
+.time {
+  font-size: 28rpx;
+  color: #5e5e5e;
+}
+
+
+.head {
+  margin-right: 20rpx;
+  width: 96rpx;
+  height: 96rpx;
+  background-color: #2c2c2c;
+  border-radius: 8rpx;
+}

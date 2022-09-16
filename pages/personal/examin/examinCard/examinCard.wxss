@@ -1,0 +1,34 @@
+/* pages/personal/examin/examinCard/examinCard.wxss */
+page {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.main {
+  display: flow-root;
+  margin-top: 40rpx;
+  background-color: #191919;
+  color: #FFFFFF;
+  min-height: 500rpx;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+  margin-top: 36rpx;
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+}
+
+.mianText {
+  font-size: large;
+  margin-top: 60rpx;
+  margin-left: 60rpx;
+}
+
+.textContent {
+  color: #A5A5A5;
+  line-height: 60rpx;
+  text-indent: 2rem;
+}

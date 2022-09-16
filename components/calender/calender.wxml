@@ -1,0 +1,36 @@
+<view class="container" >
+  <!--日期-->
+  <view class="title-date">
+    <!--日期-->
+    <text class="title-date-item"> {{date}} </text>
+  </view>
+  <!--周-->
+  <view class="center-week" >
+    <text class="center-week-content" wx:for="{{weekArray}}" wx:key="index">{{item}}</text>
+  </view>
+  <!--天-->
+  <view class="day-box" style="height:{{height}};">
+    <view class="bottom-day" style="transform: translateY({{translateHeight}});">
+      <view class="{{dayArray.length>35?'bottom-day-item-1':'bottom-day-item'}}" wx:for="{{dayArray}}" wx:key="index" catchtap="onClickDay" data-index="{{index}}">
+        <!--今天-->
+        <text class="{{dayArray.length>35 ? 'bottom-day-item-content-1 bottom-day-item-content-today':'bottom-day-item-content bottom-day-item-content-today'}}" wx:if="{{item.isToday && item.isSelect}}">{{item.day}}</text>
+        <!--选中的日期-->
+        <text class="{{dayArray.length>35 ? 'bottom-day-item-content-1 bottom-day-item-content-select': 'bottom-day-item-content bottom-day-item-content-select'}}" wx:elif="{{item.isSelect}}">{{item.day}}</text>
+        <!--本月日期-->
+        <text class="{{dayArray.length>35 ? 'bottom-day-item-content-1': 'bottom-day-item-content'}}" wx:elif="{{item.month == month}}">{{item.day}}</text>
+        <!--上月或下月-->
+        <text class="{{dayArray.length>35 ? 'bottom-day-item-content-disable bottom-day-item-content-1': 'bottom-day-item-content-disable bottom-day-item-content'}}" wx:else>{{item.day}}</text>
+      </view> 
+    </view>
+  </view>
+  
+  <view class="moreDate" style="display: {{disappear}};">
+    <view bindtap="changeDeg">
+      <view class="more" style="transform: translateX(365rpx) rotate({{deg}}); " ></view>
+      <view class="myPlan">我的计划</view>
+    </view>
+    <view class="doing">
+      进行中<view class="triangle"></view>
+    </view>
+  </view>
+</view>

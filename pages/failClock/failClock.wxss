@@ -1,0 +1,59 @@
+/* pages/failClock/failClock.wxss */
+page {
+  height: 100%;
+}
+
+.background {
+  height: 100%;
+}
+
+.background image {
+  position: fixed;
+  top: 0;
+  height: 120%;
+  width: 750rpx;
+}
+
+.black {
+  position: absolute;
+  top: 100rpx;
+  left: 50%;
+  margin-left: -275rpx;
+  width: 550rpx;
+  height: 650rpx;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,.3);
+}
+
+icon {
+  position: absolute;
+  top: 160rpx;
+  left: 50%;
+  margin-left: -54rpx;
+}
+
+.succeed {
+  position: absolute;
+  top:350rpx;
+  left: 50%;
+  margin-left: -210rpx;
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 4rpx;
+  line-height: 30rpx;
+  color: #fff;
+}
+
+.back {
+  position: absolute;
+  top: 600rpx;
+  left: 50%;
+  margin-left: -110rpx;
+  height: 80rpx;
+  width: 220rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  background-image: linear-gradient(to right,#ac1b5f,#5b4490);
+  color: #fff;
+}

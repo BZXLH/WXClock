@@ -1,0 +1,56 @@
+<!--pages/first/first.wxml-->
+<image class="background" src="../../assets/first_background.png"></image>
+<view class="wrap">
+  <image class="logo" src="cloud://cloud1-3gkicvng07c4dba5.636c-cloud1-3gkicvng07c4dba5-1310014045/LOGO.png"></image>
+  <view class="h1">欢迎来到研发打卡小程序</view>
+  <view class="tip">首次进入需填写个人信息</view>
+  <view class="main">
+    <button open-type="chooseAvatar" bindchooseavatar="changeHeadPhoto" class="headPhoto">
+      <image src="../../assets/headPhoto_man.png" class="headPhoto_man"></image>
+      <image hidden="{{!headPhoto}}" src="{{headPhoto}}" class="truePhoto"></image>
+      <view class="headPhoto_tip">编辑头像</view>
+    </button>
+    <view class="first_form">
+      <view class="form_item">
+        <view class="form_label">昵称</view>
+        <input bindblur="write" data-info="nickname" placeholder="请输入您的昵称" class="form_inp" type="text" />
+      </view>
+      <view class="form_item">
+        <view class="form_label">姓名</view>
+        <input bindblur="write" data-info="username" placeholder="请输入您的姓名" class="form_inp" type="text" />
+      </view>
+      <view class="form_item">
+        <view class="form_label">学号</view>
+        <input bindblur="write" data-info="studentId" placeholder="请输入您的学号" class="form_inp" type="text" />
+      </view>
+      <view class="form_item">
+        <view class="form_label">年级</view>
+        <picker bindchange="selGrade" mode="selector" class="form_inp" range="{{gradeList}}" value="{{index}}">
+          <view hidden="{{!grade}}">
+            {{grade + "级"}}
+          </view>
+          <view hidden="{{grade}}" style="color: #808080;">请选择您的年级</view>
+        </picker>
+      </view>
+      <view class="form_item">
+        <view class="form_label">组别</view>
+        <picker bindchange="selGroup" mode="selector" class="form_inp" range="{{groupList}}" value="{{index}}">
+          <view hidden="{{!group}}">
+            {{group}}
+          </view>
+          <view hidden="{{group}}" style="color: #808080;">请选择您的组别</view>
+        </picker>
+      </view>
+      <view class="form_item">
+        <view class="form_label">身份</view>
+        <picker bindchange="selRole" mode="selector" class="form_inp" range="{{roleList}}" value="{{index}}">
+          <view hidden="{{!role}}">
+            {{role}}
+          </view>
+          <view hidden="{{role}}" style="color: #808080;">请选择您的身份</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view bindtap="sub" class="okBtn">确认</view>
+</view>

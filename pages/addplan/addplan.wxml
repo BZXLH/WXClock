@@ -1,0 +1,17 @@
+<view class="container">
+  <image src='../../image/background2.png'></image>
+  <view class='text'>
+    <view class="add-item">计划名称 <input class="plan-name" type="text" bindinput="getTaskname" /></view>
+    <view class="section">
+      <picker mode="date" value="{{date}}" start="2010-09-01" end="2030-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          截止日期 <test class="end-time">{{endTime}}</test>
+        </view>
+      </picker>
+    </view>
+    <view class="add-item">
+      详细内容 <textarea class="plan-detail" placeholder="请输入您的计划内容" bindinput="getContent"></textarea>
+    </view>
+  </view>
+</view>
+<van-button class="add-btn" type="primary" bindtap="postPlan">新建计划</van-button>

@@ -1,0 +1,81 @@
+<view class="reportContainer">
+  <image src="../../image/background1.png" class="bac"></image>
+  <swiper class="reportSwiper" bindchange="swiperChange">
+    <!-- 第一个页 -->
+    <swiper-item class="swiperItem">
+      <!-- 背景虚化效果 -->
+      <view class="bac"></view>
+      <image class="bacImg" src="../../image/background1.png"></image>
+
+      <view class="punchTimes">
+        <view class="title">本周打卡次数</view>
+        <view class="content">{{clockCount}}次</view>
+        <view class="info">{{unClockCount == 0 ? '全勤' : '缺卡' + unClockCount + '次'}}</view>
+      </view>
+
+      <view class="studyTime">
+        <view class="title">本周学习时长</view>
+        <view class="content">{{studyDuration}}小时</view>
+        <view class="info">相比上周增长{{timePercent}}%</view>
+      </view>
+    </swiper-item>
+    <!-- 第二页 -->
+    <swiper-item class="swiperItem">
+      <!-- 背景虚化效果 -->
+      <view class="bac"></view>
+      <image class="bacImg" src="../../image/background1.png"></image>
+      <!-- 标题 -->
+      <view class="title">本周完成计划一览</view>
+      <!-- 完成的计划 -->
+      <scroll-view class="completedPlanList" scroll-y>
+        <view class="completedPlan" wx:for="{{completedPlan}}" wx:key="index" wx:if="{{completedPlan}}">
+          <text class="left">{{item.taskName}}</text>
+          <text class="right">{{item.endTime}}</text>
+        </view>
+        <view class="error" wx:if="{{!completedPlan}}">您还没有完成的计划</view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 第三页 -->
+    <swiper-item class="swiperItem">
+      <!-- 背景虚化效果 -->
+      <view class="bac"></view>
+      <image class="bacImg" src="../../image/background1.png"></image>
+      <!-- 新增计划数 -->
+      <view class="totalPlan" wx:if="{{errorMessage == ''}}">
+        <view class="title">本周的计划总数</view>
+        <view class="content">{{taskTotalCount}}个</view>
+        <view class="info">本周计划完成率为{{finishedPercent}}%</view>
+      </view>
+
+      <!-- 完成计划数 -->
+      <view class="completedPlanNum" wx:if="{{errorMessage == ''}}">
+        <view class="title">本周完成计划数</view>
+        <view class="content">{{finishedTaskCount}}个</view>
+        <view class="info">相比上周增长{{increasingPercent}}%</view>
+      </view>
+
+      <!-- 错误 -->
+      <view class="error" wx:if="{{errorMessage}}">{{errorMessage}}</view>
+
+    </swiper-item>
+    <!-- 上传周记 -->
+    <swiper-item class="swiperItem">
+      <!-- 背景虚化效果 -->
+      <view class="bac"></view>
+      <image class="bacImg" src="../../image/background1.png"></image>
+
+      <!-- 写周记 -->
+      <textarea name="weeklyReport" class="weeklyReport" placeholder="请输入您的周记内容" placeholder-class="placeholderStyle" bindinput="inputReport" value="{{preWeeklyReportContent}}"></textarea>
+    </swiper-item>
+  </swiper>
+
+  <view class="swiperDot">
+    <view class="dot {{currentIndex == 0 ? 'selectDot' : ''}}"></view>
+    <view class="dot {{currentIndex == 1 ? 'selectDot' : ''}}"></view>
+    <view class="dot {{currentIndex == 2 ? 'selectDot' : ''}}"></view>
+    <view class="dot {{currentIndex == 3 ? 'selectDot' : ''}}"></view>
+  </view>
+
+  <button id="checkBtn" bindtap="GotoOtherReport" wx:if="{{currentIndex != 3}}">查看往期周报</button>
+  <button id="submitWeeklyReport" bindtap="submit" wx:if="{{currentIndex == 3}}" type="primary">{{isUpload ? '上传中' : '上传周报'}}<text class="loader" wx:if="{{isUpload}}"></text></button>
+</view>

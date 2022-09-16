@@ -1,0 +1,136 @@
+.container {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-size: 40rpx;
+}
+
+.title-date {
+  display: flex;
+  justify-content: center;
+}
+
+.title-date-item {
+  padding: 10rpx 20rpx;
+}
+
+.center-week {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 4rpx;
+}
+
+.center-week-content {
+  font-size: 40rpx;
+}
+.day-box {
+  width: 750rpx;
+  height: 300rpx;
+  overflow: hidden;
+}
+
+.bottom-day {
+  width: 750rpx;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10rpx;
+}
+
+.bottom-day-item {
+  width: 14.28%;
+  height: 60rpx;
+  display: flex;
+  margin-bottom: 4rpx;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-day-item-1 {
+  width: 14.28%;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-day-item-content {
+  width: 50rpx;
+  height: 50rpx;
+  /* margin-top: 5rpx; */
+  margin-bottom: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+.bottom-day-item-content-1 {
+  width: 45rpx;
+  height: 45rpx;
+  margin-top: 2.5rpx;
+  margin-bottom: 2.5rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.bottom-day-item-content-disable {
+  color: rgb(96, 96, 96);
+}
+
+.bottom-day-item-content-today {
+  color: #000;
+  background-color: royalblue;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 60rpx;
+  height: 60rpx;
+  background-image: url(http://m.qpic.cn/psc?/V518ad1B4VfXic3hH1wh1XD3Ib3RG6G7/ruAMsa53pVQWN7FLK88i5t9A8GEfjaw6axgtk3lQT4XoQrhHGylGXkdt2Mvhen.xfOhQdZbJP4Sr10nqVSCWDNUvA9xLAMqALXfgVFrXt*Y!/mnull&bo=OAQ4BAAAAAADByI!&rf=photolist&t=5);
+  background-size: contain;
+}
+
+.bottom-day-item-content-select {
+  border: rgb(241, 208, 145) solid 1rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 60rpx;
+  height: 60rpx;
+}
+.moreDate {
+  position: relative;
+}
+.more {
+  width: 20rpx;
+  height: 20rpx;
+  border-right: 4rpx solid #fff;
+  border-bottom: 4rpx solid #fff;
+}
+.myPlan {
+  height: 74rpx;
+  line-height: 74rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+.doing {
+  position: absolute;
+  right: 0;
+  top: 26rpx;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 2rpx solid #fff;
+  background-color: rgb(0,0,0,0.7);
+  border-radius: 37rpx;
+  padding-left: 24rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+.triangle {
+  position: absolute;
+  top: 25rpx;
+  right:22rpx;
+  height: 0;
+  width: 0;
+  border: 14rpx solid #fff;
+  border-color: #fff  transparent transparent transparent;
+}

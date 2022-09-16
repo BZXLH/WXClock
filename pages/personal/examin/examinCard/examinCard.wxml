@@ -1,0 +1,13 @@
+<!--pages/personal/examin/examinCard/examinCard.wxml-->
+<view class="main">
+  <view class="time">
+    <view>补卡时间</view>
+    <view>{{reissueTime}}</view>
+  </view>
+  <view class="mianText">
+    <view>补卡原因</view>
+    <view class="textContent">{{reason}}</view>
+  </view>
+</view>
+<button hidden="{{status!=0}}" bindtap="pass" style="margin-top: 44rpx;" type="primary">通过</button>
+<button hidden="{{status!=0}}" bindtap="back" style="margin-top: 38rpx;background-color: #141414;color: gray;">不通过</button>

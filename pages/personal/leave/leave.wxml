@@ -1,0 +1,46 @@
+<!--pages/personal/leave/leave.wxml-->
+<view class="nav">
+  <view class="nav_inside">
+    <view bindtap="chaNav" data-index="0">我要请假</view>
+    <view bindtap="chaNav" data-index="1">请假列表</view>
+    <view class="nav_line" style="left:{{linePos+'rpx'}}" id="navLine"></view>
+  </view>
+</view>
+<!-- 请假填写 -->
+<view hidden="{{tabs}}">
+  <view class="options">
+    <view class="options_tiem">
+      <view>请假天数</view>
+      <picker bindchange="selDay" mode="selector" class="form_inp" range="{{dayList}}" value="{{index}}">
+        <view hidden="{{!day}}">
+          {{day+" 天"}}
+        </view>
+      </picker>
+    </view>
+    <view class="options_tiem">
+      <view>请假原因</view>
+      <picker bindchange="selReason" mode="selector" class="form_inp" range="{{reasonList}}" value="{{index}}">
+        <view hidden="{{!reason}}">
+          {{reason}}
+        </view>
+        <view hidden="{{reason}}" style="color: #808080;">请选择原因</view>
+      </picker>
+    </view>
+  </view>
+  <button bindtap="sub" type="primary" style="margin-top: 30rpx;">确认</button>
+</view>
+<!-- 请假列表 -->
+<view hidden="{{!tabs}}">
+  <view class="leaveList">
+    <view bindtap="goToDetail" data-time="{{item.endTime}}" data-excuse="{{item.excuse}}" data-status="{{item.status}}" data-timel="{{item.beginTime}}" wx:key="id" wx:for="{{leaveList}}" class="leaveItem">
+      <image class="leave_headPhoto" src="{{item.userDTO.avatar}}"></image>
+      <view class="leave_info">
+        <view style="font-size: large;">{{item.userDTO.username}}</view>
+        <view style="color: gray;">{{item.beginTime}}</view>
+        <view hidden="{{item.status!=0}}" class="leave_status wait"><text class="status_text">待审批</text></view>
+        <view hidden="{{item.status!=1}}" class="leave_status pass"><text class="status_text">通过</text></view>
+        <view hidden="{{item.status!=2}}" class="leave_status danger"><text class="status_text">不通过</text></view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<!--pages/personal/editDetail/editDetail.wxml-->
+<input bindinput="write" wx:if="{{title!='年级'}}" class="editDetail_input" value="{{inputKeyword}}" type="text" />
+<radio-group bindchange="check" class="radio_wrap" wx:if="{{title=='年级'}}">
+  <label class="radio" wx:for="{{gradeList}}" wx:key="garde">
+    <radio class="radioCheck" value="{{item.grade}}" checked="{{item.checked}}" />
+    {{item.grade+"级"}}
+  </label>
+</radio-group>
+<button type="primary" bindtap="save">保存</button>
