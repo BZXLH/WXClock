@@ -1,0 +1,97 @@
+/* pages/personal/leave/leave.wxss */
+page {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.nav {
+  margin: 0 130rpx;
+}
+
+.nav_inside {
+  position: relative;
+  height: 115rpx;
+  line-height: 115rpx;
+  font-size: 38rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_line {
+  position: absolute;
+  left: 330rpx;
+  bottom: 20rpx;
+  width: 175rpx;
+  height: 6rpx;
+  transition: 0.3s ease-in-out;
+  background-color: #07C160;
+}
+
+.options {
+  background-color: #191919;
+}
+
+.options_tiem {
+  height: 107rpx;
+  border-top: 1px solid #000000;
+  line-height: 107rpx;
+  padding: 0 72rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+}
+
+.leaveItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 144rpx;
+  background-color: #191919;
+  border-bottom: 1px solid #000000;
+}
+
+.leave_headPhoto {
+  display: inline-block;
+  width: 96rpx;
+  height: 96rpx;
+  background-color: #2C2C2C;
+  border-radius: 8rpx;
+  margin-left: 32rpx;
+  margin-right: 24rpx;
+}
+
+.leave_info {
+  display: inline-block;
+}
+
+.leave_status {
+  position: absolute;
+  top: 34rpx;
+  right: 60rpx;
+  height: 76rpx;
+  width: 76rpx;
+  border-radius: 50%;
+  line-height: 64rpx;
+  text-align: center;
+}
+
+.status_text {
+  display: inline-block;
+  font-size: 20rpx;
+  transform: rotate(30deg);
+}
+
+.pass {
+  color: #0B9B50;
+  border: 2px solid #0B9B50;
+}
+
+.wait {
+  color: #1285C0;
+  border: 2px solid #1285C0;
+}
+
+.danger {
+  color: #C64444;
+  border: 2px solid #C64444;
+}

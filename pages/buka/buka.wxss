@@ -1,0 +1,76 @@
+/* pages/buka/buka.wxss */
+page {
+  height: 100%;
+}
+
+.background {
+  height: 100%;
+}
+
+.background image {
+  height: 100%;
+  width: 750rpx;
+}
+
+.middle {
+  position: absolute;
+  top: 100rpx;
+  left: 50%;
+  margin-left: -303rpx;
+  width: 606rpx;
+  height: 752rpx;
+  border-radius: 32rpx;
+  background-color: rgba(255, 255, 255,.8);
+}
+
+.date {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 135rpx;
+  left: 130rpx;
+  width: 500rpx;
+  font-size: 18px;
+}
+
+.list {
+  background-color: aqua;
+  position: absolute;
+  top:200rpx;
+  right: 130rpx;
+  z-index: 1;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 213rpx;
+  left: 130rpx;
+  width: 500rpx;
+  font-size: 18px;
+}
+
+.reason {
+  position: absolute;
+  top: 285rpx;
+  left: 130rpx;
+  font-size: 18px;
+}
+
+.detail {
+  position: absolute;
+  top: 350rpx;
+  left: 130rpx;
+  width: 500rpx;
+  height: 450rpx;
+  font-size: 18px;
+}
+
+.btn {
+  position: absolute;
+  top: 910rpx;
+  left: 50%;
+  margin-left: -80rpx;
+  font-weight: normal;
+}

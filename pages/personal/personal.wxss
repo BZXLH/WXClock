@@ -1,0 +1,179 @@
+/* pages/personal/personal.wxss */
+page {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.person_info {
+  position: relative;
+  display: flow-root;
+  height: 425rpx;
+  overflow: hidden;
+  box-shadow: 0 0 20px 10px #180b2996 inset;
+}
+
+.person_background {
+  position: absolute;
+  width: 100%;
+  top: -400rpx;
+  z-index: -1;
+  animation: fly 5.5s infinite ease-in-out;
+}
+
+.person_background2 {
+  position: absolute;
+  width: 100%;
+  top: -450rpx;
+  z-index: -1;
+  animation: fly 5.5s 0.1s infinite ease-in-out;
+}
+
+.headPhoto_img {
+  width: 100%;
+  height: 100%;
+}
+
+.person_background3 {
+  position: absolute;
+  width: 100%;
+  top: -450rpx;
+  z-index: -1;
+  animation: fly 5.5s 0.2s infinite ease-in-out;
+}
+
+@keyframes fly {
+  0% {
+    opacity: 0.5;
+    top: -400rpx;
+  }
+
+  10% {
+    top: -470rpx;
+  }
+
+  15% {
+    top: -460rpx;
+  }
+
+  20% {
+    top: -480rpx;
+    opacity: 1;
+  }
+
+  30% {
+    top: -470rpx;
+  }
+
+  35% {
+    top: -475rpx;
+  }
+
+  40% {
+    top: -470rpx;
+  }
+
+  50% {
+    top: -400rpx;
+    opacity: 1;
+  }
+
+  80% {
+    top: -320rpx;
+  }
+
+  85% {
+    top: -340rpx;
+  }
+
+  90% {
+    top: -330rpx;
+    opacity: 0.3;
+  }
+
+  100% {
+    top: -400rpx;
+    opacity: 0.5;
+  }
+}
+
+
+
+.headPhoto {
+  overflow: hidden;
+  background-color: #9A97B6;
+  margin: 83rpx 0 0 71rpx;
+  width: 165rpx;
+  height: 165rpx;
+  border-radius: 50%;
+}
+
+.person_info_editBtn {
+  position: absolute;
+  background-color: #ffffff4d;
+  border-radius: 15px;
+  width: 165rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  text-align: center;
+  left: 493rpx;
+  top: 165rpx;
+  font-size: small;
+}
+
+.person_info_name {
+  position: absolute;
+  margin: 29rpx 0 0 154rpx;
+  transform: translate(-50%, 0);
+  font-size: 38rpx;
+}
+
+.person_info_phone {
+  position: absolute;
+  margin: 98rpx 0 0 154rpx;
+  transform: translate(-50%, 0);
+  font-size: small;
+}
+
+.person_total {
+  box-sizing: border-box;
+  background-color: #191919;
+  height: 175rpx;
+  display: flex;
+  justify-content: space-around;
+  padding: 25rpx;
+  text-align: center;
+}
+
+.total_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.person_options {
+  background-color: #191919;
+  margin-top: 32rpx;
+}
+
+.options_item {
+  border-top: 1px solid #000000;
+  height: 107rpx;
+  line-height: 107rpx;
+  text-indent: 80rpx;
+}
+
+.options_item_jiantou {
+  float: right;
+  margin-right: 30rpx;
+  margin-top: 40rpx;
+  width: 15rpx;
+  height: 30rpx;
+}
+
+.i {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  transform: translate(0, 10rpx);
+  margin-right: 15rpx;
+}

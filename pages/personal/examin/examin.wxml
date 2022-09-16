@@ -1,0 +1,38 @@
+<!--pages/personal/examin/examin.wxml-->
+<view class="nav">
+  <view class="nav_inside">
+    <view bindtap="chaNav" data-index="0">补卡审批</view>
+    <view bindtap="chaNav" data-index="1">请假审批</view>
+    <view class="nav_line" style="left:{{linePos+'rpx'}}" id="navLine"></view>
+  </view>
+</view>
+<!-- 补卡审批 -->
+<view hidden="{{tabs}}">
+  <view class="leaveList">
+    <view bindtap="goToExaminCard" data-time="{{item.reissueTime}}" data-reason="{{item.reason}}" data-id="{{item.id}}" data-status="{{item.status}}" wx:key="id" wx:for="{{cardList}}" class="leaveItem">
+      <image class="leave_headPhoto" src="{{item.userDTO.avatar}}"></image>
+      <view class="leave_info">
+        <view style="font-size: large;">{{item.userDTO.username}}</view>
+        <view style="color: gray;">{{item.reissueTime}}</view>
+        <view hidden="{{item.status!=0}}" class="leave_status wait"><text class="status_text">待审批</text></view>
+        <view hidden="{{item.status!=1}}" class="leave_status pass"><text class="status_text">通过</text></view>
+        <view hidden="{{item.status!=2}}" class="leave_status danger"><text class="status_text">不通过</text></view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 请假审批 -->
+<view hidden="{{!tabs}}">
+  <view class="leaveList">
+    <view data-beginTime="{{item.beginTime}}" data-endTime="{{item.endTime}}" data-excuse="{{item.excuse}}" data-status="{{item.status}}" data-id="{{item.id}}" wx:key="id" wx:for="{{leaveList}}" bindtap="goToExaminLeave" class="leaveItem">
+      <image class="leave_headPhoto" src="{{item.userDTO.avatar}}"></image>
+      <view class="leave_info">
+        <view style="font-size: large;">{{item.userDTO.username}}</view>
+        <view style="color: gray;">{{item.beginTime}}</view>
+        <view hidden="{{item.status!=0}}" class="leave_status wait"><text class="status_text">待审批</text></view>
+        <view hidden="{{item.status!=1}}" class="leave_status pass"><text class="status_text">通过</text></view>
+        <view hidden="{{item.status!=2}}" class="leave_status danger"><text class="status_text">不通过</text></view>
+      </view>
+    </view>
+  </view>
+</view>

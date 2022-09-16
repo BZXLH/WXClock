@@ -1,0 +1,19 @@
+/* pages/personal/leave/leaveDetail/leaveDetail.wxss */
+page {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.options {
+  background-color: #191919;
+}
+
+.options_tiem {
+  height: 107rpx;
+  border-top: 1px solid #000000;
+  line-height: 107rpx;
+  padding: 0 72rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+}

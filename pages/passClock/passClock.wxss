@@ -1,0 +1,46 @@
+/* pages/passClock/passClock.wxss */
+page {
+  height: 100%;
+}
+
+.background {
+  height: 100%;
+}
+
+.background image {
+  height: 100%;
+  width: 750rpx;
+}
+
+icon {
+  position: absolute;
+  top: 160rpx;
+  left: 50%;
+  margin-left: -54rpx;
+}
+
+.succeed {
+  position: absolute;
+  top:350rpx;
+  left: 50%;
+  margin-left: -115rpx;
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 4rpx;
+  line-height: 40rpx;
+  color: #fff;
+}
+
+.back {
+  position: absolute;
+  top: 600rpx;
+  left: 50%;
+  margin-left: -100rpx;
+  height: 80rpx;
+  width: 200rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  background-color: rgba(225,225,225,.3);
+  color: #fff;
+}

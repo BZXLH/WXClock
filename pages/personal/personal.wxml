@@ -1,0 +1,56 @@
+<!--pages/personal/personal.wxml-->
+<view class="person_info">
+  <image mode="widthFix" class="person_background" src="../../assets/first_background.png"></image>
+  <image mode="widthFix" class="person_background2" src="../../assets/first_background.png"></image>
+  <image mode="widthFix" class="person_background3" src="../../assets/first_background.png"></image>
+  <view class="headPhoto">
+    <image class="headPhoto_img" hidden="{{!info.avatar}}" src="{{info.avatar}}"></image>
+  </view>
+  <view class="person_info_editBtn">
+    <navigator url="/pages/personal/editInfo/editInfo" open-type="navigate">编辑资料</navigator>
+  </view>
+  <view class="person_info_name">{{info.nickname}}</view>
+  <view class="person_info_phone">{{info.studentId}}</view>
+</view>
+<view class="person_total">
+  <view class="total_item">
+    <view>连续打卡天数</view>
+    <view style="font-size: large;">{{lianxv}}天</view>
+  </view>
+  <view class="total_item">
+    <view>打卡总次数</view>
+    <view style="font-size: large;">{{daka}}个</view>
+  </view>
+  <view class="total_item">
+    <view>计划完成总数</view>
+    <view style="font-size: large;">{{jihua}}个</view>
+  </view>
+</view>
+<view class="person_options">
+  <view class="options_item">
+    <navigator url="/pages/personal/leave/leave" open-type="navigate">
+      <image class="i" src="../../assets/qingjia.png"></image>
+      请假
+      <image class="options_item_jiantou" src="../../assets/jiantou.png"></image>
+    </navigator>
+  </view>
+  <view class="options_item">
+    <navigator url="/pages/personal/respond/respond" open-type="navigate">
+      <image class="i" src="../../assets/fankui.png"></image>
+      意见反馈
+      <image class="options_item_jiantou" src="../../assets/jiantou.png"></image>
+    </navigator>
+  </view>
+  <!-- <view class="options_item">
+    <image class="i" src="../../assets/dingyue.png"></image>
+    消息订阅
+    <image class="options_item_jiantou" src="../../assets/jiantou.png"></image>
+  </view> -->
+  <view wx:if="{{info.userRole.roleId==1}}" class="options_item">
+    <navigator url="/pages/personal/examin/examin" open-type="navigate">
+      <image class="i" src="../../assets/daka.png"></image>
+      审批
+      <image class="options_item_jiantou" src="../../assets/jiantou.png"></image>
+    </navigator>
+  </view>
+</view>

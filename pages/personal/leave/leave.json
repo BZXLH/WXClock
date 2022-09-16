@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "请假",
+  "navigationBarBackgroundColor": "#111111",
+  "backgroundColor": "#000000",
+  "onReachBottomDistance": 20
+}

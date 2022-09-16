@@ -1,0 +1,65 @@
+/* pages/editInfo/editInfo.wxss */
+page {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.headPhoto_wrap {
+  position: relative;
+  display: flex;
+  height: 175rpx;
+  margin-top: 33rpx;
+  background-color: #191919;
+}
+
+.headPhoto {
+  margin: 28rpx 0 0 52rpx;
+  width: 123rpx;
+  height: 123rpx;
+  border-radius: 50%;
+}
+
+.headPhotoBtn {
+  padding: 0;
+  background-color: transparent;
+  width: 100% !important;
+  position: relative;
+  display: flex;
+  border-radius: 0;
+  color: #FFFFFF;
+  height: 175rpx;
+}
+
+.headPhoto_jiantou {
+  position: absolute;
+  right: 36rpx;
+  font-size: large;
+  line-height: 175rpx;
+}
+
+.info {
+  margin-top: 53rpx;
+  height: 430rpx;
+  background-color: #191919;
+}
+
+.info_item {
+  height: 107rpx;
+  line-height: 107rpx;
+  font-size: large;
+  border-top: 1px solid #000000;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 72rpx;
+}
+
+.info_jiantou {
+  position: absolute;
+  right: 36rpx;
+  line-height: 107rpx;
+}
+
+.jiantou {
+  width: 15rpx;
+  height: 30rpx;
+}

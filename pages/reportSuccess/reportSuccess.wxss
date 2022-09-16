@@ -1,0 +1,54 @@
+/* pages/reportSuccess/reportSuccess.wxss */
+Page {
+  background-color: black;
+  height: 100%;
+}
+
+.bac {
+  position: absolute;
+  top: -1rpx;
+  left: -1rpx;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+}
+
+
+.msg {
+  margin-top: -100rpx;
+  color: white;
+}
+
+.successTitle,
+.reportNum {
+  text-align: center;
+}
+
+.successTitle {
+  margin-bottom: 16rpx;
+  font-size: 56rpx;
+}
+
+.reportNum {
+  font-size: 28rpx;
+}
+
+.btn {
+  margin-bottom: 100rpx;
+}
+
+#otherReport,
+#backButton {
+  width: 300rpx;
+  height: 80rpx;
+  background: rgba(49, 52, 84, .5);
+  color: #d4d3d8;
+  border-radius: 8rpx;
+  font-size: 34rpx;
+  font-weight: 400;
+}
+
+#otherReport {
+  margin-bottom: 40rpx;
+}

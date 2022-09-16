@@ -1,0 +1,26 @@
+<view class="container">
+  <image src='../../image/background2.png'></image>
+  <view class='text'>
+    <view class="add-item">计划名称 <input class="plan-name" type="text" bindinput="getTaskname" value="{{taskName}}"/></view>
+    <view class="section">
+      <picker mode="date" value="{{date}}" start="{{today}}" end="2030-09-01" bindchange="bindDateChange2">
+        <view class="picker">
+         开始日期 <test class="start-time">{{startTime}}</test>
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <picker mode="date" value="{{date}}" start="{{taday}}" end="2030-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          截止日期 <test class="end-time">{{endTime}}</test>
+        </view>
+      </picker>
+    </view>
+    <view class="add-item">
+      详细内容 <textarea class="plan-detail" placeholder="" bindinput="getContent" value="{{content}}"></textarea>
+    </view>
+  </view>
+</view>
+<button  class="finish-plan" bindtap="finishPlan" style="width:230rpx">完成计划</button>
+<button  class="delete-plan" bindtap="deletePlan" style="width:230rpx">删除计划</button>
+<button  class="edit-plan" bindtap="editPlan" style="width:230rpx" wx:if="{{status=='进行中'||status=='未开始'}}">编辑计划</button>

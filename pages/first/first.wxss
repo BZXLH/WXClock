@@ -1,0 +1,139 @@
+/* pages/first/first.wxss */
+page {
+  color: #ffffff;
+}
+
+.wrap {
+  display: flow-root;
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.h1 {
+  font-size: 44rpx;
+  font-weight: 700;
+  margin-top: 126rpx;
+  margin-left: 75rpx;
+}
+
+.tip {
+  margin-left: 75rpx;
+  margin-top: 46rpx;
+}
+
+.logo {
+  position: absolute;
+  width: 136rpx;
+  height: 136rpx;
+  right: 72rpx;
+  top: 144rpx;
+}
+
+.main {
+  display: flow-root;
+  width: 540rpx;
+  margin-left: 106rpx;
+  margin-top: 62rpx;
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  padding-bottom: 20rpx;
+}
+
+.headPhoto {
+  display: block;
+  position: relative;
+  height: 156rpx;
+  width: 156rpx !important;
+  border-radius: 50%;
+  margin-top: 42rpx;
+  margin-left: 198rpx;
+  overflow: hidden;
+  backdrop-filter: blur(32px);
+  background-color: rgba(56, 56, 56, 0.418);
+}
+
+.truePhoto {
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  height: 156rpx;
+  width: 156rpx;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.headPhoto_tip {
+  position: absolute;
+  left: 0;
+  top: 121rpx;
+  height: 36rpx;
+  width: 156rpx;
+  text-align: center;
+  background-color: #4B3957;
+  font-size: 20rpx;
+  color: #000000;
+}
+
+.headPhoto_man {
+  position: absolute;
+  top: 18rpx;
+  left: 32rpx;
+  width: 92rpx;
+  height: 120rpx;
+}
+
+.first_form {
+  margin-top: 37rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 44rpx;
+}
+
+.form_label {
+  font-size: large;
+}
+
+.form_inp {
+  color: black;
+  height: 58rpx;
+  line-height: 58rpx;
+  border-radius: 50rpx;
+  background-color: #ffffff;
+  padding-left: 20rpx;
+  margin-left: 20rpx;
+  font-size: small;
+  width: 300rpx;
+}
+
+.form_sel {
+  background-color: #ffffff;
+  color: black;
+  width: 100%;
+}
+
+.okBtn {
+  width: 230rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin-left: 260rpx;
+  margin-top: 42rpx;
+  margin-bottom: 100rpx;
+  background-color: #07C160;
+  border-radius: 3px;
+}
