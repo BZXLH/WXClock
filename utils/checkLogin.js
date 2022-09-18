@@ -5,10 +5,6 @@
 import { login } from "../api/index";
 export default function checkLogin() {
   return new Promise((resolve, reject) => {
-    if (wx.getStorageSync("token")) {
-      resolve(1);
-      return;
-    }
     wx.showLoading({ title: "加载中" });
     // 获取openId并存入storage中
     wx.login({
@@ -20,7 +16,6 @@ export default function checkLogin() {
           } else {
             wx.setStorageSync("token", data.userJwt);
             resolve(1);
-              
           }
         });
       },

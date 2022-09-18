@@ -8,7 +8,7 @@
     <view class="bacColor"></view>
 
     <!-- 输入周记内容 -->
-    <textarea class="weeklyReportSubmit" placeholder="请输入您的周记内容" placeholder-class="hint" value="{{weeklyReportContent}}"  bindinput="inputReport"></textarea>
+    <textarea class="weeklyReportSubmit" placeholder="请输入您的周记内容" placeholder-class="hint" value="{{weeklyReportContent}}"  bindinput="inputReport" maxlength="-1"></textarea>
 
     <!-- 上传周记按钮 -->
     <button id="submitWeeklyReport" bindtap="submit">{{isUpload ? '上传中' : '上传周报'}}<text class="loader" wx:if="{{isUpload}}"></text></button>

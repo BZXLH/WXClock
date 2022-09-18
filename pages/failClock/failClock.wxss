@@ -8,8 +8,21 @@ page {
 }
 
 .background image {
-  height: 100%;
+  position: fixed;
+  top: 0;
+  height: 120%;
   width: 750rpx;
+}
+
+.black {
+  position: absolute;
+  top: 100rpx;
+  left: 50%;
+  margin-left: -275rpx;
+  width: 550rpx;
+  height: 650rpx;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,.3);
 }
 
 icon {
@@ -35,12 +48,12 @@ icon {
   position: absolute;
   top: 600rpx;
   left: 50%;
-  margin-left: -100rpx;
+  margin-left: -110rpx;
   height: 80rpx;
-  width: 200rpx;
+  width: 220rpx;
   text-align: center;
   line-height: 80rpx;
   border-radius: 10rpx;
-  background-color: #07c160;
+  background-image: linear-gradient(to right,#ac1b5f,#5b4490);
   color: #fff;
 }

@@ -41,11 +41,10 @@ export function reqLeaveList(data) {
   });
 }
 //提交意见反馈
-export function reqRespond(data) {
+export function reqRespond({ content, theme }) {
   return request({
-    url: "/feedback",
+    url: `/feedback?content=${content}&theme=${theme}`,
     method: "post",
-    data,
   });
 }
 //获取意见列表
@@ -95,5 +94,23 @@ export function reqData() {
   return request({
     url: "/user/getMainData",
     method: "get",
+  });
+}
+
+//获取本周连续打卡时长
+export function reqTimeLong() {
+  return request({
+    url: "clockin/weekClockinHours",
+    method: "get",
+    data: { week: 0 },
+  });
+}
+
+//获取所有人打卡时长
+export function reqAllTimeLong() {
+  return request({
+    url: "clockin/getAllWeekClockinHours",
+    method: "get",
+    data: { week: 0 },
   });
 }

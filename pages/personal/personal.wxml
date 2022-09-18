@@ -14,8 +14,8 @@
 </view>
 <view class="person_total">
   <view class="total_item">
-    <view>连续打卡天数</view>
-    <view style="font-size: large;">{{lianxv}}天</view>
+    <view>本周打卡时长</view>
+    <view style="font-size: large;">{{timeLong}}h</view>
   </view>
   <view class="total_item">
     <view>打卡总次数</view>
@@ -35,9 +35,16 @@
     </navigator>
   </view>
   <view class="options_item">
-    <navigator url="/pages/personal/respond/respond" open-type="navigate">
+    <navigator url="/pages/personal/respond/respond?roleId={{info.userRole.roleId}}" open-type="navigate">
       <image class="i" src="../../assets/fankui.png"></image>
       意见反馈
+      <image class="options_item_jiantou" src="../../assets/jiantou.png"></image>
+    </navigator>
+  </view>
+  <view wx:if="{{info.userRole.roleId==1}}" class="options_item">
+    <navigator url="/pages/personal/usersTimeLong/usersTimeLong" open-type="navigate">
+      <image class="i" src="../../assets/dingyue.png"></image>
+      时长总览
       <image class="options_item_jiantou" src="../../assets/jiantou.png"></image>
     </navigator>
   </view>

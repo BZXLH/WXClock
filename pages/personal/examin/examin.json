@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "审批"
+  "navigationBarTitleText": "审批",
+  "onReachBottomDistance": 20
 }

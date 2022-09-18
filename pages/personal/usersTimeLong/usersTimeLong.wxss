@@ -1,0 +1,39 @@
+/* pages/personal/usersTimeLong/usersTimeLong.wxss */
+page {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.leaveItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 144rpx;
+  background-color: #191919;
+  border-bottom: 1px solid #000000;
+}
+
+.leave_headPhoto {
+  display: inline-block;
+  width: 96rpx;
+  height: 96rpx;
+  background-color: #2C2C2C;
+  border-radius: 8rpx;
+  margin-left: 32rpx;
+  margin-right: 24rpx;
+}
+
+.leave_info {
+  display: inline-block;
+}
+
+.leave_status {
+  position: absolute;
+  top: 34rpx;
+  right: 60rpx;
+  height: 76rpx;
+  width: 76rpx;
+  border-radius: 50%;
+  line-height: 64rpx;
+  text-align: center;
+}

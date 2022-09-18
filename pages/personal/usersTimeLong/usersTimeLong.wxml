@@ -1,0 +1,18 @@
+<!--pages/personal/usersTimeLong/usersTimeLong.wxml-->
+<view class="leaveList">
+  <view wx:key="index" wx:for="{{timeLongList}}" class="leaveItem">
+    <image class="leave_headPhoto" src="{{item.userDTO.avatar}}"></image>
+    <view class="leave_info">
+      <view style="font-size: large;">{{item.userDTO.username}}</view>
+      <view style="color: gray;">本周时长：{{fliter.timeLongFliter(item.duration)}}小时</view>
+    </view>
+  </view>
+  <view style="text-align: center;" hidden="{{timeLongList.length}}">这里啥都没有</view>
+</view>
+<wxs module="fliter">
+  module.exports.timeLongFliter = function (num) {
+    var _num = num + ""
+    _num = _num.split(".")
+    return _num[0] + "." + _num[1].slice(0, 2)
+  }
+</wxs>

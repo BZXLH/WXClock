@@ -1,5 +1,5 @@
 // pages/personal/personal.js
-import { reqUserInfo, reqData } from "../../api/index";
+import { reqUserInfo, reqData,reqTimeLong } from "../../api/index";
 Page({
   /**
    * 页面的初始数据
@@ -16,6 +16,7 @@ Page({
     daka: "",
     jihua: "",
     lianxv: "",
+    timeLong:""
   },
   /**
    * 生命周期函数--监听页面加载
@@ -46,6 +47,9 @@ Page({
         lianxv: data.days,
       });
     });
+    reqTimeLong().then(({data})=>{
+      this.setData({timeLong:data})
+    })
   },
 
   /**

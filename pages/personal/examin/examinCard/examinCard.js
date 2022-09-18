@@ -9,11 +9,14 @@ Page({
     reason: "",
     id: "",
     status: "",
+    userId: "",
   },
   //通过
   pass() {
     reqExamineCard({
       id: this.data.id,
+      reissueTime: this.data.reissueTime,
+      userId: this.data.userId,
       status: 1,
     }).then(() => {
       wx.navigateBack();
@@ -28,6 +31,8 @@ Page({
   back() {
     reqExamineCard({
       id: this.data.id,
+      reissueTime: this.data.reissueTime,
+      userId: this.data.userId,
       status: 2,
     }).then(() => {
       wx.navigateBack();
@@ -41,8 +46,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad({ reissueTime, reason, id, status }) {
-    this.setData({ reissueTime, reason, id, status });
+  onLoad({ reissueTime, reason, id, status, userId }) {
+    this.setData({ reissueTime, reason, id, status, userId });
   },
 
   /**

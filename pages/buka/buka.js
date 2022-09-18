@@ -99,7 +99,7 @@ Page({
       });
       return;
     }
-    if (this.data.reason == "") {
+    if (this.data.reason == ""||(this.data.reason.trim()=="")) {
       wx.showToast({
         title: "原因不能为空",
         icon: "error",
@@ -116,7 +116,7 @@ Page({
         },
         data: {
           reason: this.data.reason,
-          time: this.data.clockTime + " " + this.data.detailTime,
+          reissueTime: this.data.clockTime + " " + this.data.detailTime,
         },
         success: (res) => {
           console.log(res);

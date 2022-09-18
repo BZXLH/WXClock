@@ -9,11 +9,16 @@ Page({
     getMy:"unselected",
     listCondition:true,
     PageofAll:1,
-    pageSize:10,
+    PageofMy:1,
+    pageSize:14,
     allList:[],
     myList:[],
     isloading:false,
-    AlltoBottom:false
+    AlltoBottom:false,
+    MytoBottom:false,
+    //两个列表的滚动条高度
+    Allheight:0,
+    Myheight:0,
   },
 
   /**
@@ -52,11 +57,32 @@ Page({
     
   },
 
+  //左右切换页面
+  
+
+  // 获取滚动条当前位置
+  onPageScroll:function(e){
+    console.log(e)
+      if(this.data.getAll=="selected"){
+        this.setData({
+          Allheight:e.scrollTop
+        })
+      }else if(this.data.getMy=="selected"){
+        this.setData({
+          Myheight:e.scrollTop
+        })
+      }
+  },
+
   showAllList(){
     this.setData({
       getAll:"selected",
       getMy:"unselected",
       listCondition:true,
+    })
+    wx.pageScrollTo({ 
+      duration : 0,
+      scrollTop : this.data.Allheight
     })
   },
 
@@ -98,9 +124,16 @@ Page({
       getMy:"selected",
       listCondition:false
     })
+    wx.pageScrollTo({ 
+      duration : 0,
+      scrollTop : this.data.Myheight
+    })
   },
 
   getMyList(){
+    this.setData({
+      isloading:true
+    })
     var header = {
       'content-type': 'application/json',
       'Authorization': wx.getStorageSync("token")
@@ -109,14 +142,21 @@ Page({
       url: 'https://philil.com.cn/clockin_app/api//clockin/self',
       method:'get',
       data:{
-        pageAt : 1,
-        pageSize : 7,
+        pageAt : this.data.PageofMy,
+        pageSize : this.data.pageSize,
       },
       header: header,
       success:(res)=>{
+        console.log(res)
         console.log(res.data.data.content)
         this.setData({
-          myList:[...this.data.myList,...res.data.data.content]
+          myList:[...this.data.myList,...res.data.data.content],
+          MytoBottom :res.data.data.last
+        })
+      },
+      complete:()=>{
+        this.setData({
+          isloading:false
         })
       }
     }) 
@@ -134,12 +174,18 @@ Page({
    */
   onReachBottom() {
     if(this.data.isloading) return;
-    if((this.data.getAll=="selected")&&(this.data.Allend==false)){
-      this.setData({
+    if((this.data.getAll=="selected")&&(this.data.AlltoBottom==false)){
+    this.setData({
         PageofAll : this.data.PageofAll + 1
       })
       this.getAllList()
     }
+    if((this.data.getMy=="selected")&&(this.data.MytoBottom==false)){
+      this.setData({
+          PageofMy : this.data.PageofMy + 1
+        })
+        this.getMyList()
+      }
   },
 
   /**

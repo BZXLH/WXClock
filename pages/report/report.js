@@ -42,6 +42,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    // const reg = new RegExp("\d+[.]\d", "g") 
+    // const res = str.match(reg)
+    // console.log(res);
+
     //loading
     wx.showLoading({
       title: '加载中...',
@@ -80,7 +85,7 @@ Page({
           },
           success: (res) => {
             //判断token有没有过期
-            if (res.data.code == 401) {
+            if (res.statusCode == 401) {
               checkLogin();
               return;
             }
@@ -99,7 +104,7 @@ Page({
               },
               success: (res) => {
 
-                if (res.data.code == 401) {
+                if (res.statusCode == 401) {
                   checkLogin();
                   return;    
                 }
@@ -178,7 +183,7 @@ Page({
         week: this.data.week
       },
       success: (res) => {
-        if (res.data.code == 401) {
+        if (res.statusCode == 401) {
           checkLogin();
           return;    
         }

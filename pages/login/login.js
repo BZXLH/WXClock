@@ -9,11 +9,21 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  async onLoad(options) {
+  onLoad(options) {},
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {},
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  async onShow() {
     wx.showLoading({
       title: "加载中",
     });
-    let res = await login();
+    let res = await login(true);
     if (res) {
       wx.switchTab({
         url: "/pages/daka/daka",
@@ -27,16 +37,6 @@ Page({
       success: (res) => {},
     });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {},
 
   /**
    * 生命周期函数--监听页面隐藏

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    num: 1
+    num: 1,
+    pageTop:'',
   },
 
   /**
@@ -14,13 +15,19 @@ Page({
   onLoad(options) {
     console.log(options);
     this.setData({
-      num: options.num
+      num: options.num,
+      pageTop: options.pageTop
     })
   },
   back() {
-    console.log(111);
+    var that=this
     wx.navigateBack({
       delta: 2
+    })
+    // // 设置滚动条的位置
+    wx.pageScrollTo({
+      scrollTop: that.data.pageTop, // 滚动到的位置（距离顶部 px）
+      duration: 0 //滚动所需时间 如果不需要滚动过渡动画，设为0（ms）
     })
   },
 

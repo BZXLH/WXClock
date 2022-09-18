@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    roleId: "",
     linePos: -10,
     tabs: 0, //0是请假填写,1是请假列表
     wid: 132,
@@ -34,22 +35,20 @@ Page({
     this.setData({ theme: event.detail.value });
   },
   writeC(event) {
-    console.log(event.detail.value);
     this.setData({ content: event.detail.value });
   },
   //上传意见
   sub() {
-    console.log(this.data.content);
     reqRespond({
       content: this.data.content,
       theme: this.data.theme,
     }).then(({ success }) => {
       if (success) {
+        this.getList(1);
+        this.setData({ content: "", theme: "" });
         wx.showToast({
           title: "发表成功",
         });
-        this.getList(1);
-        this.setData({ content: "", theme: "" });
       }
     });
   },
@@ -96,8 +95,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-    this.getList(1);
+  onLoad({ roleId }) {
+    this.setData({ roleId });
   },
 
   /**

@@ -21,7 +21,7 @@ export default function request({ url, method, data }) {
       },
       success({ data, code }) {
         if (code == 401) {
-          login().then(() => {
+          login(true).then(() => {
             reject();
           });
         } else resolve(data);

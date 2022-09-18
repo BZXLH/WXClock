@@ -8,8 +8,21 @@ page {
 }
 
 .background image {
-  height: 100%;
+  position: fixed;
+  top: 0;
+  height: 120%;
   width: 750rpx;
+}
+
+.black {
+  position: absolute;
+  top: 100rpx;
+  left: 50%;
+  margin-left: -275rpx;
+  width: 550rpx;
+  height: 650rpx;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,.3);
 }
 
 icon {

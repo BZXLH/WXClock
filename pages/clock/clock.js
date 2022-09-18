@@ -56,7 +56,7 @@ Page({
 
   submitClock() {
     console.log(this.data.thinking);
-    if (this.data.thinking == "") {
+    if ((this.data.thinking == "")||(this.data.thinking.trim()=="")) {
       wx.showToast({
         title: "感想不能为空",
         icon: "error",
@@ -67,7 +67,7 @@ Page({
     wx.showToast({
       title: "获取定位中...",
       icon: "loading",
-      duration: 4000,
+      duration: 5000,
     });
     wx.getLocation({
       isHighAccuracy: true,
@@ -93,6 +93,8 @@ Page({
             },
             header: header,
             success: (res) => {
+              console.log(res)
+            console.log(this.data.thinking)
               wx.setStorageSync("times", res.data);
               wx.navigateTo({
                 url: "../passClock/passClock",

@@ -96,6 +96,7 @@ Page({
       }
       this.isDone = true;
     }
+    console.log(this.data.leaveList.length);
   },
 
   /**

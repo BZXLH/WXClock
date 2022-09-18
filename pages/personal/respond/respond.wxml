@@ -3,9 +3,9 @@
 <view class="mask"></view>
 <view class="nav">
   <view class="nav_inside">
-    <view bindtap="chaNav" data-index="0" data-textlen="3">提意见</view>
-    <view bindtap="chaNav" data-index="1" data-textlen="4">意见列表</view>
-    <view class="nav_line" style="left:{{linePos+'rpx'}};width: {{wid}}rpx;" id="navLine"></view>
+    <view wx:if="{{info.userRole.roleId!=1}}" bindtap="chaNav" data-index="0" data-textlen="3">提意见</view>
+    <view wx:if="{{info.userRole.roleId!=1}}" bindtap="chaNav" data-index="1" data-textlen="4">意见列表</view>
+    <view wx:if="{{info.userRole.roleId!=1}}" class="nav_line" style="left:{{linePos+'rpx'}};width: {{wid}}rpx;" id="navLine"></view>
   </view>
 </view>
 <!-- 提意见 -->
@@ -32,5 +32,6 @@
         <view style="color: gray;">{{item.date}}</view>
       </view>
     </view>
+    <view style="text-align: center;" hidden="{{respondList.length}}">这里啥都没有</view>
   </view>
 </view>

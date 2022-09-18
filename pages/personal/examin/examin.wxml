@@ -9,7 +9,7 @@
 <!-- 补卡审批 -->
 <view hidden="{{tabs}}">
   <view class="leaveList">
-    <view bindtap="goToExaminCard" data-time="{{item.reissueTime}}" data-reason="{{item.reason}}" data-id="{{item.id}}" data-status="{{item.status}}" wx:key="id" wx:for="{{cardList}}" class="leaveItem">
+    <view bindtap="goToExaminCard" data-userid="{{item.userId}}" data-time="{{item.reissueTime}}" data-reason="{{item.reason}}" data-id="{{item.id}}" data-status="{{item.status}}" wx:key="id" wx:for="{{cardList}}" class="leaveItem">
       <image class="leave_headPhoto" src="{{item.userDTO.avatar}}"></image>
       <view class="leave_info">
         <view style="font-size: large;">{{item.userDTO.username}}</view>
@@ -19,6 +19,7 @@
         <view hidden="{{item.status!=2}}" class="leave_status danger"><text class="status_text">不通过</text></view>
       </view>
     </view>
+    <view style="text-align: center;" hidden="{{cardList.length}}">这里啥都没有</view>
   </view>
 </view>
 <!-- 请假审批 -->
@@ -34,5 +35,6 @@
         <view hidden="{{item.status!=2}}" class="leave_status danger"><text class="status_text">不通过</text></view>
       </view>
     </view>
+    <view style="text-align: center;" hidden="{{leaveList.length}}">这里啥都没有</view>
   </view>
 </view>

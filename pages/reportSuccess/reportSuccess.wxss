@@ -1,12 +1,4 @@
 /* pages/reportSuccess/reportSuccess.wxss */
-@keyframes rocketMove {
-  0% {
-    top: 1206rpx;
-  }
-  100% {
-    top: -772rpx;
-  }
-}
 
 Page {
   background-color: black;
@@ -15,6 +7,7 @@ Page {
 
 /* 外层容器 */
 .container {
+  overflow: hidden;
   position: relative;
   height: 100%;
   padding: 0 !important;
@@ -32,13 +25,12 @@ Page {
 
 .rocket {
   position: absolute;
-  top: 1206rpx;
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -52rpx;
   width: 104rpx;
   height: 772rpx;
   z-index: -1;
-  animation: rocketMove 1s  .3s  ease-in forwards;
   transition: all 1s;
 }
 

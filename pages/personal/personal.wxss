@@ -47,34 +47,20 @@ page {
     top: -400rpx;
   }
 
-  10% {
-    top: -470rpx;
-  }
-
-  15% {
-    top: -460rpx;
-  }
 
   20% {
-    top: -480rpx;
+    top: -490rpx;
+    opacity: 0.7;
+  }
+
+  23% {
+    top: -490rpx;
     opacity: 1;
   }
 
-  30% {
-    top: -470rpx;
-  }
-
-  35% {
-    top: -475rpx;
-  }
-
-  40% {
-    top: -470rpx;
-  }
 
   50% {
     top: -400rpx;
-    opacity: 1;
   }
 
   80% {

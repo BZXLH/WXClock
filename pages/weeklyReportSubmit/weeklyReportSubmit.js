@@ -1,4 +1,6 @@
 // pages/weeklyReportSubmit/weeklyReportSubmit.js
+import checkLogin from '../../utils/checkLogin'
+
 Page({
 
   /**
@@ -9,7 +11,6 @@ Page({
     isUpload: false, //是否在上传周记
     weeklyReportContent: "", //要上传的周记内容
     preWeeklyReportContent: "",//上一次上传成功的周记内容
-    token: "", //token
     query: {}//接收传参
   },
 
@@ -112,7 +113,7 @@ Page({
       },
       success: (res) => {
         //判断token有没有过期
-        if (res.data.code == 401) {
+        if (res.statusCode == 401) {
           checkLogin();
           return
         }
@@ -181,7 +182,7 @@ Page({
       },
       success: (res) => {
         //判断token有没有过期
-        if (res.data.code == 401) {
+        if (res.statusCode == 401) {
           checkLogin();
           return
         }

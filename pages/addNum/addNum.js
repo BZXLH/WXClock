@@ -17,7 +17,6 @@ Page({
     });
   },
   back() {
-    console.log(111);
     wx.navigateBack({
       delta: 2,
     });

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/start/start",
     "pages/daka/daka",
     "pages/report/report",
     "pages/personal/personal",
@@ -10,6 +11,7 @@
     "pages/personal/leave/leaveDetail/leaveDetail",
     "pages/personal/examin/examin",
     "pages/personal/examin/examinCard/examinCard",
+    "pages/weeklyReportSubmit/weeklyReportSubmit",
     "pages/personal/respond/respond",
     "pages/personal/respond/respondDetail/respondDetail",
     "pages/first/first",
@@ -21,12 +23,12 @@
     "pages/reportSuccess/reportSuccess",
     "pages/preReportList/preReportList",
     "pages/preReport/preReport",
-    "pages/weeklyReportSubmit/weeklyReportSubmit",
     "pages/plan/plan",
     "pages/addplan/addplan",
     "pages/editplan/editplan",
     "pages/addNum/addNum",
-    "pages/finishNum/finishNum"
+    "pages/finishNum/finishNum",
+    "pages/personal/usersTimeLong/usersTimeLong"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -74,10 +76,6 @@
     "scope.userLocation": {
       "desc": "你的位置信息将用于定位打卡"
     }
-  },
-  "usingComponents": {
-    "van-button": "@vant/weapp/button/index",
-    "van-picker": "@vant/weapp/picker/index"
   },
   "requiredPrivateInfos": [
     "getLocation"

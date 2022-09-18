@@ -1,20 +1,52 @@
 <!--pages/plan/plan.wxml-->
+<!-- 背景图片 -->
 <image src='../../image/background1.png' class="bg"></image>
-<calender class="calender"></calender>
+<!-- 日历 -->
+<calendar></calendar>
+<!-- 欢迎框 -->
+<view class="welcome">
+  <view class="name">{{helloWord}}！<text>{{nickname}}</text>！</view>
+  <view class="today-time">{{today}}</view>
+  <view class="status" >
+    <view class="triangle" style="transform: rotateX({{deg}}) translateY({{translateY}})"></view>
+    <view class="now-status" bindtap="changeStatus">{{status}}</view>
+    <view class="select-status" style="display: {{display}};">
+      <view hidden="{{!finishShow}}" bindtap="finishStatus">已完成</view>
+      <view hidden="{{!overdueShow}}" bindtap="overdueStatus">已逾期</view>
+      <view hidden="{{!doingShow}}" bindtap="doingStatus" >进行中</view>
+      <view hidden="{{!nobeginShow}}" bindtap="nobeginStatus" >未开始</view>
+    </view>
+  </view>
+</view>
+<!-- 新增任务 -->
 <navigator url="/pages/addplan/addplan" open-type="navigate" class="add-plan">
-  <image src="../../images/ball/4.png"></image>
   <text>+</text>
 </navigator>
 <!-- 任务 -->
 <view id="plan" wx:for="{{planArray}}" wx:key="index">
   <view class="plan-item" bindtap="editPlan" data-index="{{index}}" data-id="{{item.id}}">
-    <view class="plan-icon">
-      <image src="../../images/ball/{{iconArray[index]}}.png" mode='heightFix'></image>
+    <view class="plan-icon" >
+      <image src="../../images/ball/{{iconArray[index]}}.png" mode='heightFix' class=" {{m1.arrSlice(item.endTime)==todayDate?'float':''}}"></image>
     </view>
     <view class="plan-detail">
       <view class="plan-name">{{item.taskName}}</view>
       <view class="plan-content">{{item.content}}</view>
     </view>
-    <view class="{{dayIntervalArray[index]>0?'plan-ddl':'plan-fail'}}">{{dayIntervalArray[index]}}天</view>
+    <view class="ddl">
+      <view class="{{dayIntervalArray[index]>=0?'plan-ddl':'plan-fail'}}">{{dayIntervalArray[index]}}天</view>
+      <view class="ddl-word">{{m1.arrSlice(item.endTime)}}</view>
+    </view>
   </view>
 </view>
+<!-- 没有任务 -->
+<view class="no-plan" hidden="{{!noPlan}}">
+  <image src="../../image/noPlan.png" class="icon"></image>
+  <view class="remind-no">暂时还没有计划哦~</view>
+  <view class="remind-add">点击“+”按钮立即创建</view>
+</view>
+<wxs module="m1">
+    //判断一个数是否在数组中
+	module.exports.arrSlice=function(arr) {
+    	return arr.slice(0,10)
+  }
+</wxs>

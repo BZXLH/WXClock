@@ -1,5 +1,15 @@
 /* pages/plan/plan.wxss */
 /* pages/calendar/calendar.wxss */
+@keyframes float {
+  0% {
+    transform-origin: (center center);
+    transform:translate(-50%,-50%) scale(0.9);
+  }
+  100% {
+    transform-origin: (center center);
+    transform:translate(-50%,-50%) scale(1.1);
+  }
+}
 .bg {
   position: fixed;
   top: -176rpx;
@@ -8,23 +18,74 @@
   z-index: -1;
   transform: scale(1.4);
 }
+/* 欢迎 */
 
+.welcome {
+  position: relative;
+  z-index: 111;
+  width: 1000%;
+  height: 128rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  color: #fff;
+  padding: 20rpx 60rpx;
+  box-sizing: border-box;
+  background-color: rgb(0,0,0,0.2);
+}
+
+.welcome .today-time {
+  font-size: 26rpx;
+  padding-top: 16rpx;
+}
+
+.welcome .status {
+  position: absolute;
+  top: 27rpx;
+  left: 520rpx;
+  width: 204rpx;
+  border-radius: 37rpx;
+  background-color: rgb(0,0,0,0.5);
+  border: 1px solid rgb(255,255,255,0.5);
+}
+
+.welcome .triangle {
+  position: absolute;
+  z-index: -1;
+  top: 30rpx;
+  right: 25rpx;
+  width: 0;
+  height: 0;
+  border:  16rpx solid #fff;
+  border-color: #fff transparent transparent transparent;
+}
+
+.welcome .now-status {
+  /* display: none; */
+  width: 204rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  padding-left: 40rpx;
+}
+
+
+.welcome .select-status view{
+  width: 204rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  padding-left: 40rpx;
+}
+
+/* 计划 */
 .plan-item {
   position: relative;
   width: 750rpx;
   height: 148rpx;
-  background-color: rgb(25, 25, 25);
-  border-bottom: 1px solid #000;
+  background-color: rgb(0,0,0,0.3);
+  border-bottom: 1rpx solid rgb(0,0,0,0.7);
   font-size: 40rpx;
 }
 
-.plan-detail {
-  position: absolute;
-  left: 180rpx;
-  top: 50%;
-  transform: translateY(-50%);
-  color: rgb(191, 191, 191);
-}
+
 
 .plan-icon {
   position: absolute;
@@ -35,6 +96,19 @@
   width: 120rpx;
 }
 
+.float {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%);
+  vertical-align: center;
+  animation-name: float;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  animation-direction: alternate;
+}
+
 .plan-icon image {
   position: absolute;
   left: 50%;
@@ -43,24 +117,34 @@
   height: 100rpx;
 }
 
-.plan-content {
-  color: rgb(91, 91, 91);
-  font-size: 30rpx;
-}
-
-.plan-ddl {
+.plan-detail {
   position: absolute;
-  right: 20rpx;
+  left: 180rpx;
   top: 50%;
   transform: translateY(-50%);
   color: rgb(191, 191, 191);
 }
 
-.plan-fail {
+.plan-content {
+  color: rgb(91, 91, 91);
+  font-size: 30rpx;
+}
+
+.ddl {
   position: absolute;
   right: 20rpx;
   top: 50%;
   transform: translateY(-50%);
+  color: rgb(191, 191, 191);
+  text-align: center;
+}
+
+.ddl-word {
+  color: rgb(91, 91, 91);
+  font-size: 30rpx;
+}
+
+.plan-fail {
   color: rgb(250, 81, 81);
 }
 
@@ -74,6 +158,8 @@
   background-color: #fff;
   font-size: 80rpx;
   border-radius: 50% 50%;
+  color: #fff;
+  background-color: rgb(168, 160, 195,.8);
 }
 
 .add-plan image {
@@ -86,4 +172,35 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.no-plan {
+  position: fixed;
+  width: 100%;
+  height: 1600rpx;
+  background-color: #000;
+  color: #fff;
+}
+.no-plan image {
+  position: absolute;
+  top: 80rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 196rpx;
+  height: 229rpx;
+}
+.no-plan .remind-no {
+  font-size: 34rpx;
+  position: absolute;
+  top: 330rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.no-plan .remind-add {
+  position: absolute;
+  font-size: 30rpx;
+  top: 380rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(183, 183, 183);
 }

@@ -8,7 +8,9 @@ page {
 }
 
 .background image {
-  height: 100%;
+  position: fixed;
+  top: 0;
+  height: 120%;
   width: 750rpx;
 }
 
@@ -21,7 +23,8 @@ page {
   height: 604rpx;
   font-size: 18px;
   border-radius: 32rpx;
-  background-color: rgba(255, 255, 255,.8);
+  background-color: rgba(255, 255, 255,.4);
+  backdrop-filter: blur(10px);
   padding: 50rpx;
   box-sizing: border-box;
 }
@@ -30,6 +33,10 @@ page {
   position: absolute;
   top: 800rpx;
   left: 50%;
-  margin-left: -80rpx;
+  width: 230rpx;
+  height: 80rpx;
+  transform: translateX(-50%);
   font-weight: normal;
+  color: #fff;
+  background-image: linear-gradient(to right,#ac1b5f,#5b4490);
 }

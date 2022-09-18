@@ -38,9 +38,9 @@ Page({
   },
   //前往补卡审批
   goToExaminCard(event) {
-    let { reissueTime, reason, id, status } = event.currentTarget.dataset;
+    let { time, reason, id, status,userid } = event.currentTarget.dataset;
     wx.navigateTo({
-      url: `/pages/personal/examin/examinCard/examinCard?reissueTime=${reissueTime}&reason=${reason}&id=${id}&status=${status}`,
+      url: `/pages/personal/examin/examinCard/examinCard?userId=${userid}&reissueTime=${time}&reason=${reason}&id=${id}&status=${status}`,
     });
   },
   async getCardList(page) {
