@@ -20,7 +20,12 @@ page {
   width: 606rpx;
   height: 752rpx;
   border-radius: 32rpx;
+<<<<<<< HEAD
   background-color: rgba(255, 255, 255,.8);
+=======
+  background-color: rgba(255, 255, 255,.4);
+  backdrop-filter: blur(10px);
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 }
 
 .date {

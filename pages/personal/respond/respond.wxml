@@ -3,9 +3,15 @@
 <view class="mask"></view>
 <view class="nav">
   <view class="nav_inside">
+<<<<<<< HEAD
     <view bindtap="chaNav" data-index="0" data-textlen="3">提意见</view>
     <view bindtap="chaNav" data-index="1" data-textlen="4">意见列表</view>
     <view class="nav_line" style="left:{{linePos+'rpx'}};width: {{wid}}rpx;" id="navLine"></view>
+=======
+    <view wx:if="{{info.userRole.roleId!=1}}" bindtap="chaNav" data-index="0" data-textlen="3">提意见</view>
+    <view wx:if="{{info.userRole.roleId!=1}}" bindtap="chaNav" data-index="1" data-textlen="4">意见列表</view>
+    <view wx:if="{{info.userRole.roleId!=1}}" class="nav_line" style="left:{{linePos+'rpx'}};width: {{wid}}rpx;" id="navLine"></view>
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   </view>
 </view>
 <!-- 提意见 -->
@@ -13,11 +19,19 @@
   <view class="main">
     <view class="title">
       <view style="font-weight: 600;">主题</view>
+<<<<<<< HEAD
       <input bindblur="writeT" class="title_inp" />
     </view>
     <view class="mainText">
       <view style="margin-left: 45rpx; font-weight: 600;">具体内容</view>
       <textarea bindinput="writeC" class="mainText_inp" placeholder="请输入"></textarea>
+=======
+      <input bindblur="writeT" value="{{theme}}" class="title_inp" />
+    </view>
+    <view class="mainText">
+      <view style="margin-left: 45rpx; font-weight: 600;">具体内容</view>
+      <textarea bindinput="writeC" class="mainText_inp" value="{{content}}" placeholder="请输入"></textarea>
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     </view>
   </view>
   <button bindtap="sub" style="margin-top: 44rpx;" type="primary">发表意见</button>
@@ -26,11 +40,18 @@
 <view hidden="{{!tabs}}">
   <view class="respondList">
     <view bindtap="goToResopnseDetail" data-theme="{{item.theme}}" data-content="{{item.content}}" wx:key="id" wx:for="{{respondList}}" class="respondItem">
+<<<<<<< HEAD
       <image class="respond_headPhoto"></image>
+=======
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       <view class="respond_info">
         <view style="font-size: large;">{{item.theme}}</view>
         <view style="color: gray;">{{item.date}}</view>
       </view>
     </view>
+<<<<<<< HEAD
+=======
+    <view style="text-align: center;" hidden="{{respondList.length}}">这里啥都没有</view>
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   </view>
 </view>

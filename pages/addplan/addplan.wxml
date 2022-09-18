@@ -3,7 +3,18 @@
   <view class='text'>
     <view class="add-item">计划名称 <input class="plan-name" type="text" bindinput="getTaskname" /></view>
     <view class="section">
+<<<<<<< HEAD
       <picker mode="date" value="{{date}}" start="2010-09-01" end="2030-09-01" bindchange="bindDateChange">
+=======
+      <picker mode="date" value="{{date}}" start="{{today}}" end="2030-09-01" bindchange="bindDateChange2">
+        <view class="picker">
+         开始日期 <test class="start-time">{{startTime}}</test>
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <picker mode="date" value="{{date}}" start="{{today}}" end="2030-09-01" bindchange="bindDateChange">
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
         <view class="picker">
           截止日期 <test class="end-time">{{endTime}}</test>
         </view>
@@ -14,4 +25,8 @@
     </view>
   </view>
 </view>
+<<<<<<< HEAD
 <van-button class="add-btn" type="primary" bindtap="postPlan">新建计划</van-button>
+=======
+<button class="add-btn"  bindtap="postPlan">新建计划</button>
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e

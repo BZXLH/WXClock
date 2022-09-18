@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
     num: 1
+=======
+    num: 1,
+    pageTop:'',
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   },
 
   /**
@@ -14,6 +19,7 @@ Page({
   onLoad(options) {
     console.log(options);
     this.setData({
+<<<<<<< HEAD
       num: options.num
     })
   },
@@ -22,6 +28,22 @@ Page({
     wx.navigateBack({
       delta: 2
     })
+=======
+      num: options.num,
+      pageTop: options.pageTop
+    })
+  },
+  back() {
+    var that=this
+    wx.navigateBack({
+      delta: 2
+    })
+    // // 设置滚动条的位置
+    wx.pageScrollTo({
+      scrollTop: that.data.pageTop, // 滚动到的位置（距离顶部 px）
+      duration: 0 //滚动所需时间 如果不需要滚动过渡动画，设为0（ms）
+    })
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   },
 
   /**

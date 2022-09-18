@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 <!--pages/login/login.wxml-->
 <image src="../../assets/first_background.png"></image>
+=======
+<!--pages/login/login.wxml-->
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e

@@ -1,5 +1,9 @@
 <!--pages/failClock/failClock.wxml-->
 <view class="background"><image src="../../image/background2.png"></image></view>
+<<<<<<< HEAD
+=======
+<view class="black"></view>
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 <icon  type="warn" size="54"></icon>
 <view class="succeed">打卡失败<text style="font-size: 13px;">\n您需要授权定位才能打卡\n如已授权，请尝试重新定位打卡</text></view>
 <navigator open-type="navigateBack" delta="1" class="back">重新打卡</navigator>

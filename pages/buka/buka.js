@@ -99,7 +99,11 @@ Page({
       });
       return;
     }
+<<<<<<< HEAD
     if (this.data.reason == "") {
+=======
+    if (this.data.reason == ""||(this.data.reason.trim()=="")) {
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       wx.showToast({
         title: "原因不能为空",
         icon: "error",
@@ -116,7 +120,11 @@ Page({
         },
         data: {
           reason: this.data.reason,
+<<<<<<< HEAD
           time: this.data.clockTime + " " + this.data.detailTime,
+=======
+          reissueTime: this.data.clockTime + " " + this.data.detailTime,
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
         },
         success: (res) => {
           console.log(res);

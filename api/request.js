@@ -21,7 +21,11 @@ export default function request({ url, method, data }) {
       },
       success({ data, code }) {
         if (code == 401) {
+<<<<<<< HEAD
           login().then(() => {
+=======
+          login(true).then(() => {
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
             reject();
           });
         } else resolve(data);

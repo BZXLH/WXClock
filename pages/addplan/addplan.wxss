@@ -9,11 +9,16 @@ image {
   z-index: -1;
   width: 100%;
   height: 1338rpx;
+<<<<<<< HEAD
   transform: scale(1.2);
+=======
+  transform: scale(1.5);
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 }
 
 .text {
   position: absolute;
+<<<<<<< HEAD
   width: 606rpx;
   height: 752rpx;
   box-sizing: border-box;
@@ -21,6 +26,17 @@ image {
   margin-top: 70rpx;
   border-radius: 20rpx;
   background-color: rgb(255, 255, 255, .7);
+=======
+  top: 100rpx;
+  width: 606rpx;
+  height: 720rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  background-color: rgb(21, 19, 47, .2);
+  backdrop-filter: blur(20px); 
+  color: rgb(255, 255, 255, .7);
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 }
 
 .add-item {
@@ -38,6 +54,13 @@ image {
   padding-bottom: 26rpx;
 }
 
+<<<<<<< HEAD
+=======
+.start-time {
+  padding-left: 30rpx;
+}
+
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 .end-time {
   padding-left: 30rpx;
 }
@@ -56,4 +79,13 @@ image {
   left: 50%;
   z-index: 50;
   transform: translateX(-50%);
+<<<<<<< HEAD
 }
+=======
+  width: 230rpx;
+  height: 80rpx;
+  color: #fff;
+  font-weight: 400;
+  background-image: linear-gradient(to right,rgb(173, 26, 95),rgb(134, 47, 118),rgb(92, 68, 143));
+}
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e

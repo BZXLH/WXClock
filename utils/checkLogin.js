@@ -5,10 +5,13 @@
 import { login } from "../api/index";
 export default function checkLogin() {
   return new Promise((resolve, reject) => {
+<<<<<<< HEAD
     if (wx.getStorageSync("token")) {
       resolve(1);
       return;
     }
+=======
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     wx.showLoading({ title: "加载中" });
     // 获取openId并存入storage中
     wx.login({
@@ -20,7 +23,10 @@ export default function checkLogin() {
           } else {
             wx.setStorageSync("token", data.userJwt);
             resolve(1);
+<<<<<<< HEAD
               
+=======
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
           }
         });
       },

@@ -9,11 +9,20 @@ Page({
     reason: "",
     id: "",
     status: "",
+<<<<<<< HEAD
+=======
+    userId: "",
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   },
   //通过
   pass() {
     reqExamineCard({
       id: this.data.id,
+<<<<<<< HEAD
+=======
+      reissueTime: this.data.reissueTime,
+      userId: this.data.userId,
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       status: 1,
     }).then(() => {
       wx.navigateBack();
@@ -28,6 +37,11 @@ Page({
   back() {
     reqExamineCard({
       id: this.data.id,
+<<<<<<< HEAD
+=======
+      reissueTime: this.data.reissueTime,
+      userId: this.data.userId,
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       status: 2,
     }).then(() => {
       wx.navigateBack();
@@ -41,8 +55,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+<<<<<<< HEAD
   onLoad({ reissueTime, reason, id, status }) {
     this.setData({ reissueTime, reason, id, status });
+=======
+  onLoad({ reissueTime, reason, id, status, userId }) {
+    this.setData({ reissueTime, reason, id, status, userId });
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   },
 
   /**

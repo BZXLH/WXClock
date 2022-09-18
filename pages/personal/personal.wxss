@@ -47,6 +47,7 @@ page {
     top: -400rpx;
   }
 
+<<<<<<< HEAD
   10% {
     top: -470rpx;
   }
@@ -75,6 +76,22 @@ page {
   50% {
     top: -400rpx;
     opacity: 1;
+=======
+
+  20% {
+    top: -490rpx;
+    opacity: 0.7;
+  }
+
+  23% {
+    top: -490rpx;
+    opacity: 1;
+  }
+
+
+  50% {
+    top: -400rpx;
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   }
 
   80% {

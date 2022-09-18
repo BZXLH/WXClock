@@ -14,8 +14,13 @@
 </view>
 <view class="person_total">
   <view class="total_item">
+<<<<<<< HEAD
     <view>连续打卡天数</view>
     <view style="font-size: large;">{{lianxv}}天</view>
+=======
+    <view>本周打卡时长</view>
+    <view style="font-size: large;">{{fliter.timeLongFliter(timeLong)}}h</view>
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   </view>
   <view class="total_item">
     <view>打卡总次数</view>
@@ -35,12 +40,26 @@
     </navigator>
   </view>
   <view class="options_item">
+<<<<<<< HEAD
     <navigator url="/pages/personal/respond/respond" open-type="navigate">
+=======
+    <navigator url="/pages/personal/respond/respond?roleId={{info.userRole.roleId}}" open-type="navigate">
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       <image class="i" src="../../assets/fankui.png"></image>
       意见反馈
       <image class="options_item_jiantou" src="../../assets/jiantou.png"></image>
     </navigator>
   </view>
+<<<<<<< HEAD
+=======
+  <view wx:if="{{info.userRole.roleId==1}}" class="options_item">
+    <navigator url="/pages/personal/usersTimeLong/usersTimeLong" open-type="navigate">
+      <image class="i" src="../../assets/dingyue.png"></image>
+      时长总览
+      <image class="options_item_jiantou" src="../../assets/jiantou.png"></image>
+    </navigator>
+  </view>
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   <!-- <view class="options_item">
     <image class="i" src="../../assets/dingyue.png"></image>
     消息订阅
@@ -53,4 +72,15 @@
       <image class="options_item_jiantou" src="../../assets/jiantou.png"></image>
     </navigator>
   </view>
+<<<<<<< HEAD
 </view>
+=======
+</view>
+<wxs module="fliter">
+  module.exports.timeLongFliter = function (num) {
+    var _num = num + ""
+    _num = _num.split(".")
+    return _num[0] + "." + _num[1].slice(0, 2)
+  }
+</wxs>
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e

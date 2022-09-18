@@ -17,7 +17,10 @@ Page({
     });
   },
   back() {
+<<<<<<< HEAD
     console.log(111);
+=======
+>>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     wx.navigateBack({
       delta: 2,
     });
