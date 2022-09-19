@@ -26,7 +26,7 @@
 <view id="plan" wx:for="{{planArray}}" wx:key="index">
   <view class="plan-item" bindtap="editPlan" data-index="{{index}}" data-id="{{item.id}}">
     <view class="plan-icon" >
-      <image src="../../images/ball/{{iconArray[index]}}.png" mode='heightFix' class=" {{m1.arrSlice(item.endTime)==todayDate?'float':''}}"></image>
+      <image src="../../images/ball/{{m1.randomNum(0,8)}}.png" mode='heightFix' class=" {{m1.arrSlice(item.endTime)==todayDate?'float':''}}"></image>
     </view>
     <view class="plan-detail">
       <view class="plan-name">{{item.taskName}}</view>
@@ -47,6 +47,10 @@
 <wxs module="m1">
     //判断一个数是否在数组中
 	module.exports.arrSlice=function(arr) {
-    	return arr.slice(0,10)
+    		return arr.slice(0,10)
+	}
+	module.exports.randomNum=function(start,stop) {
+   		return parseInt(Math.random()*(stop-start)+start);
+  	}
   }
 </wxs>
