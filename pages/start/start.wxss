@@ -1,0 +1,84 @@
+/* pages/start/start.wxss */
+page {
+  height: 100%;
+}
+
+.background {
+  height: 100%;
+}
+
+.background image {
+  position: fixed;
+  top: 0;
+  height: 120%;
+  width: 750rpx;
+  transform: scale(1.4);
+  /* transition: all 0.3s ease-in-out; */
+}
+
+.star image {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 750rpx;
+  transform: scale(1.2);
+  opacity: 0;
+}
+
+.ball1 {
+  position: fixed;
+  top: 300rpx;
+  left: 100rpx;
+  height: 156rpx;
+  width: 219rpx;
+}
+
+.ball2 {
+  position: fixed;
+  bottom: 250rpx;
+  left: 280rpx;
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.ball3 {
+  position: fixed;
+  bottom: -200rpx;
+  left: -200rpx;
+  height: 500rpx;
+  width: 500rpx;
+}
+
+.ball4 {
+  position: fixed;
+  bottom: 500rpx;
+  right: -50rpx;
+  height: 104rpx;
+  width: 146rpx;
+}
+
+.ball5 {
+  position: absolute;
+  top: 450rpx;
+  right: 100rpx;
+  height: 120rpx;
+  width: 120rpx;
+}
+
+.ball6 {
+  position: fixed;
+  top: -30rpx;
+  right: 200rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.xiu {
+  position: absolute;
+  bottom: -150rpx;
+  left: 50%;
+  margin-left: -50rpx;
+  height: 650rpx;
+  width: 100rpx;
+}
+
