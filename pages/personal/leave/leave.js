@@ -96,10 +96,6 @@ Page({
       }
       this.isDone = true;
     }
-<<<<<<< HEAD
-=======
-    console.log(this.data.leaveList.length);
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   },
 
   /**

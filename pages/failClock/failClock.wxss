@@ -8,12 +8,6 @@ page {
 }
 
 .background image {
-<<<<<<< HEAD
-  height: 100%;
-  width: 750rpx;
-}
-
-=======
   position: fixed;
   top: 0;
   height: 120%;
@@ -28,10 +22,9 @@ page {
   width: 550rpx;
   height: 650rpx;
   border-radius: 10px;
-  background-color: rgba(0,0,0,.3);
+  background-color: rgba(0, 0, 0, .3);
 }
 
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 icon {
   position: absolute;
   top: 160rpx;
@@ -41,7 +34,7 @@ icon {
 
 .succeed {
   position: absolute;
-  top:350rpx;
+  top: 350rpx;
   left: 50%;
   margin-left: -210rpx;
   text-align: center;
@@ -55,22 +48,12 @@ icon {
   position: absolute;
   top: 600rpx;
   left: 50%;
-<<<<<<< HEAD
-  margin-left: -100rpx;
-  height: 80rpx;
-  width: 200rpx;
-  text-align: center;
-  line-height: 80rpx;
-  border-radius: 10rpx;
-  background-color: #07c160;
-=======
   margin-left: -110rpx;
   height: 80rpx;
   width: 220rpx;
   text-align: center;
   line-height: 80rpx;
   border-radius: 10rpx;
-  background-image: linear-gradient(to right,#ac1b5f,#5b4490);
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+  background-image: linear-gradient(to right, #ac1b5f, #5b4490);
   color: #fff;
 }

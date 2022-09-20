@@ -1,5 +1,5 @@
 {
-  "appid": "touristappid",
+  "appid": "wx7fe683afc7fea4cf",
   "compileType": "miniprogram",
   "libVersion": "2.26.1",
   "packOptions": {
@@ -32,7 +32,9 @@
     },
     "disableUseStrict": false,
     "useCompilerPlugins": false,
-    "minifyWXML": true
+    "minifyWXML": true,
+    "useMultiFrameRuntime": true,
+    "ignoreUploadUnusedFiles": true
   },
   "condition": {},
   "editorSetting": {

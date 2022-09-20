@@ -19,10 +19,5 @@
     <view hidden="{{status!=2}}">不通过</view>
   </view>
 </view>
-<<<<<<< HEAD
-<button hidden="{{status==0}}" bindtap="pass" style="margin-top: 44rpx;" type="primary">通过</button>
-<button hidden="{{status==0}}" bindtap="back" style="margin-top: 38rpx;background-color: #141414;color: gray;">不通过</button>
-=======
 <button wx:if="{{status==0 && type}}" bindtap="pass" style="margin-top: 44rpx;" type="primary">通过</button>
 <button wx:if="{{status==0 && type}}" bindtap="back" style="margin-top: 38rpx;background-color: #141414;color: gray;">不通过</button>
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e

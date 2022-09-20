@@ -5,10 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-<<<<<<< HEAD
-=======
     roleId: "",
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     linePos: -10,
     tabs: 0, //0是请假填写,1是请假列表
     wid: 132,
@@ -33,39 +30,21 @@ Page({
       wid: textlen * 44,
     });
     this.lineIndex = index;
-<<<<<<< HEAD
-=======
     if (this.lineIndex) this.getList(1);
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   },
   writeT(event) {
     this.setData({ theme: event.detail.value });
   },
   writeC(event) {
-<<<<<<< HEAD
-    console.log(event.detail.value);
-=======
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     this.setData({ content: event.detail.value });
   },
   //上传意见
   sub() {
-<<<<<<< HEAD
-    console.log(this.data.content);
-=======
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     reqRespond({
       content: this.data.content,
       theme: this.data.theme,
     }).then(({ success }) => {
       if (success) {
-<<<<<<< HEAD
-        wx.showToast({
-          title: "发表成功",
-        });
-        this.getList(1);
-        this.setData({ content: "", theme: "" });
-=======
         this.setData({ content: "", theme: "" });
         wx.showToast({
           title: "发表成功",
@@ -75,7 +54,6 @@ Page({
           icon: "error",
           title: "发表失败，请重试",
         });
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       }
     });
   },
@@ -111,10 +89,7 @@ Page({
       }
       this.isDone = true;
     }
-<<<<<<< HEAD
-=======
     wx.stopPullDownRefresh();
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   },
   //前往详情
   goToResopnseDetail(e) {
@@ -126,13 +101,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-<<<<<<< HEAD
-  onLoad(options) {
-    this.getList(1);
-=======
   onLoad({ roleId }) {
     this.setData({ roleId });
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   },
 
   /**
@@ -143,13 +113,9 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-<<<<<<< HEAD
-  onShow() {},
-=======
   onShow() {
     this.getList(1);
   },
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -164,13 +130,9 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-<<<<<<< HEAD
-  onPullDownRefresh() {},
-=======
   onPullDownRefresh() {
     this.getList();
   },
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 
   /**
    * 页面上拉触底事件的处理函数

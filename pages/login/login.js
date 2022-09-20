@@ -9,13 +9,6 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-<<<<<<< HEAD
-  async onLoad(options) {
-    wx.showLoading({
-      title: "加载中",
-    });
-    let res = await login();
-=======
   onLoad(options) {},
 
   /**
@@ -31,7 +24,6 @@ Page({
       title: "加载中",
     });
     let res = await login(true);
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     if (res) {
       wx.switchTab({
         url: "/pages/daka/daka",
@@ -47,19 +39,6 @@ Page({
   },
 
   /**
-<<<<<<< HEAD
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {},
-
-  /**
-=======
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
    * 生命周期函数--监听页面隐藏
    */
   onHide() {},

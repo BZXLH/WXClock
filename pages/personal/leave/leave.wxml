@@ -42,9 +42,6 @@
         <view hidden="{{item.status!=2}}" class="leave_status danger"><text class="status_text">不通过</text></view>
       </view>
     </view>
-<<<<<<< HEAD
-=======
     <view style="text-align: center;" hidden="{{leaveList.length}}">这里啥都没有</view>
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   </view>
 </view>

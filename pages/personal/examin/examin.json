@@ -1,9 +1,5 @@
 {
   "usingComponents": {},
-<<<<<<< HEAD
-  "navigationBarTitleText": "审批"
-=======
   "navigationBarTitleText": "审批",
   "onReachBottomDistance": 20
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 }

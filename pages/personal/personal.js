@@ -1,9 +1,5 @@
 // pages/personal/personal.js
-<<<<<<< HEAD
-import { reqUserInfo, reqData } from "../../api/index";
-=======
-import { reqUserInfo, reqData,reqTimeLong } from "../../api/index";
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+import { reqUserInfo, reqData, reqTimeLong } from "../../api/index";
 Page({
   /**
    * 页面的初始数据
@@ -20,10 +16,7 @@ Page({
     daka: "",
     jihua: "",
     lianxv: "",
-<<<<<<< HEAD
-=======
-    timeLong:""
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+    timeLong: "",
   },
   /**
    * 生命周期函数--监听页面加载
@@ -54,12 +47,9 @@ Page({
         lianxv: data.days,
       });
     });
-<<<<<<< HEAD
-=======
-    reqTimeLong().then(({data})=>{
-      this.setData({timeLong:data})
-    })
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+    reqTimeLong().then(({ data }) => {
+      this.setData({ timeLong: data });
+    });
   },
 
   /**
