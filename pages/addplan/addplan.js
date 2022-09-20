@@ -1,4 +1,4 @@
-// pages/addplan/addplan.js
+import checkLogin from "../../utils/checkLogin";
 Page({
   /**
    * 页面的初始数据
@@ -86,7 +86,7 @@ Page({
       success(res) {
         console.log(res);
          //判断token有没有过期
-         if (res.data.code == 401) {
+         if (res.statusCode == 401) {
           checkLogin();
           return;
         }
@@ -97,7 +97,7 @@ Page({
             duration: 1000
           })
         }
-        if (res.statusCode == 200) {
+        if (res.data.code == 200) {
           if(res.data.message=='任务名称不得为空'||res.data.message=='任务内容不得为空'||res.data.message=='结束时间不得为空') {
             wx.showToast({
               title: res.data.message,

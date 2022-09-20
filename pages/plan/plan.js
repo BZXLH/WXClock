@@ -1,3 +1,4 @@
+import checkLogin from "../../utils/checkLogin";
 Page({
   data: {
     planArray: [],
@@ -67,12 +68,13 @@ Page({
         'Authorization':wx.getStorageSync('token')
       },
       success (res) {
+        console.log(res);
          //判断token有没有过期
-         if (res.data.code == 401) {
+         if (res.statusCode == 401) {
           checkLogin();
           return;
         }
-        if (res.statusCode == 200) {
+        if (res.data.code == 200) {
           that.setData({
             nickname:res.data.data.nickname 
           })
@@ -273,11 +275,11 @@ Page({
       success (res) {
         console.log(res.data);
          //判断token有没有过期
-         if (res.data.code == 401) {
+         if (res.statusCode == 401) {
           checkLogin();
           return;
         }
-        if (res.statusCode == 200) {
+        if (res.data.code == 200) {
           if(res.data.data===null) {
             that.setData({
               planArray:[],
@@ -333,11 +335,11 @@ Page({
           })
         }
          //判断token有没有过期
-         if (res.data.code == 401) {
+         if (res.statusCode == 401) {
           checkLogin();
           return;
         }
-        if (res.statusCode == 200) {
+        if (res.data.code == 200) {
           //判断是否有数据
           if(res.data.data.content.length==0) {
             wx.showLoading({

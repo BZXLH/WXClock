@@ -128,6 +128,12 @@
 .plan-content {
   color: rgb(91, 91, 91);
   font-size: 30rpx;
+  width: 350rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ddl {
@@ -145,7 +151,7 @@
 }
 
 .plan-fail {
-  color: rgb(250, 81, 81);
+  color: red;
 }
 
 .add-plan {

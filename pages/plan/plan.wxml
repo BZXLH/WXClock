@@ -33,7 +33,7 @@
       <view class="plan-content">{{item.content}}</view>
     </view>
     <view class="ddl">
-      <view class="{{dayIntervalArray[index]>=0?'plan-ddl':'plan-fail'}}">{{dayIntervalArray[index]}}天</view>
+      <view class="{{status==='已逾期'?'plan-fail':'plan-ddl'}}">{{dayIntervalArray[index]}}天</view>
       <view class="ddl-word">{{m1.arrSlice(item.endTime)}}</view>
     </view>
   </view>

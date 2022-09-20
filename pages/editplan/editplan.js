@@ -1,4 +1,4 @@
-// pages/editplan/editplan.js
+import checkLogin from "../../utils/checkLogin";
 Page({
 
   /**
@@ -110,7 +110,8 @@ Page({
             },
             success (res) {
                //判断token有没有过期
-               if (res.data.code == 401) {
+                //判断token有没有过期
+              if (res.statusCode == 401) {
                 checkLogin();
                 return;
               }
@@ -121,7 +122,7 @@ Page({
                   duration: 1000
                 })
               }
-              if (res.statusCode == 200) {
+              if (res.data.code == 200) {
                 if(res.data.message=='任务名称不得为空'||res.data.message=='任务内容不得为空'||res.data.message=='结束时间不得为空') {
                   wx.showToast({
                     title: res.data.message,
@@ -168,11 +169,11 @@ Page({
       success (res) {
         console.log(res.data);
          //判断token有没有过期
-         if (res.data.code == 401) {
+         if (res.statusCode == 401) {
           checkLogin();
           return;
         }
-        if (res.statusCode == 200) {
+        if (res.data.code == 200) {
           wx.navigateTo({
             url: '../../pages/finishNum/finishNum?num='+res.data.data+'&pageTop='+that.data.pageTop
           })
@@ -197,11 +198,11 @@ Page({
             success (res) {
               console.log(res.data);
                //判断token有没有过期
-              if (res.data.code == 401) {
+               if (res.statusCode == 401) {
                 checkLogin();
                 return;
               }
-              if (res.statusCode == 200) {
+              if (res.data.code == 200) {
                   wx.navigateBack()
                   // // 设置滚动条的位置
                   wx.pageScrollTo({
