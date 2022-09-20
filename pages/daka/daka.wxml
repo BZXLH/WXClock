@@ -1,42 +1,4 @@
 <!--pages/daka/daka.wxml-->
-<<<<<<< HEAD
-<view class="background">
-  <image src="../../image/background1.png"></image>
-</view>
-<view>
-  <image class="clockImg" src="../../images/ball/4.png"></image>
-</view>
-<view class="today" bindtap="gotoClock">今日打卡</view>
-<view>
-  <image class="listImg" src="../../images/ball/1.png"></image>
-</view>
-<view class="list" bindtap="gotoList">打卡列表</view>
-<view>
-  <image class="finishedImg" src="../../images/ball/5.png"></image>
-</view>
-<view class="finished">今日完成计划<text style="font-size: 22px;">\n{{finished}}个</text></view>
-<view>
-  <image class="timesImg" src="../../images/ball/2.png"></image>
-</view>
-<view class="times">打卡总次数<text style="font-size: 22px;">\n{{times}}次</text></view>
-<view>
-  <image class="daysImg" src="../../images/ball/8.png"></image>
-</view>
-<view class="days">连续打卡天数<text style="font-size: 32px; ">\n{{days}}天</text></view>
-<view>
-  <image class="plansImg" src="../../images/ball/3.png"></image>
-</view>
-<view class="plans">计划完成总数<text style="font-size: 30px;">\n{{plans}}个</text></view>
-<view>
-  <image class="applyImg" src="../../images/ball/7.png"></image>
-</view>
-<view class="ball1" bindtap="gotoBuka">补卡申请</view>
-<view>
-  <image class="ball2" src="../../images/ball/0.png"></image>
-</view>
-<view>
-  <image class="ball3" src="../../images/ball/6.png"></image>
-=======
 <!-- 启动页动画 -->
 <view class="start" style="opacity: 1;" animation="{{startOpacity}}">
   <view class="startBg"><image src="../../image/noStar.png" animation="{{bg}}"></image></view>
@@ -69,7 +31,7 @@
   <view>
     <image class="listImg" src="../../images/ball/1.png" animation="{{animation1}}"></image>
   </view>
-  <view class="list" bindtap="gotoList" animation="{{animation2}}">打卡列表</view>
+  <view class="list" bindtap="gotoList" animation="{{animation2}}"><text>打卡\n列表</text></view>
   <view>
     <image class="finishedImg" src="../../images/ball/2.png" animation="{{animation2}}"></image>
   </view>
@@ -90,5 +52,4 @@
     <image class="timesImg" src="../../images/ball/0.png" animation="{{animation1}}"></image>
   </view>
   <view class="times" animation="{{animation1}}"  bindtap="showTimes"><text hidden="{{times}}">打卡总次数</text><text hidden="{{!times}}">{{timesData}}次</text></view>
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 </view>

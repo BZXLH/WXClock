@@ -1,10 +1,6 @@
 {
   "pages": [
     "pages/login/login",
-<<<<<<< HEAD
-=======
-    "pages/start/start",
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     "pages/daka/daka",
     "pages/report/report",
     "pages/personal/personal",
@@ -14,10 +10,6 @@
     "pages/personal/leave/leaveDetail/leaveDetail",
     "pages/personal/examin/examin",
     "pages/personal/examin/examinCard/examinCard",
-<<<<<<< HEAD
-=======
-    "pages/weeklyReportSubmit/weeklyReportSubmit",
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     "pages/personal/respond/respond",
     "pages/personal/respond/respondDetail/respondDetail",
     "pages/first/first",
@@ -29,20 +21,11 @@
     "pages/reportSuccess/reportSuccess",
     "pages/preReportList/preReportList",
     "pages/preReport/preReport",
-<<<<<<< HEAD
-    "pages/weeklyReportSubmit/weeklyReportSubmit",
-=======
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     "pages/plan/plan",
     "pages/addplan/addplan",
     "pages/editplan/editplan",
     "pages/addNum/addNum",
-<<<<<<< HEAD
     "pages/finishNum/finishNum"
-=======
-    "pages/finishNum/finishNum",
-    "pages/personal/usersTimeLong/usersTimeLong"
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -91,13 +74,6 @@
       "desc": "你的位置信息将用于定位打卡"
     }
   },
-<<<<<<< HEAD
-  "usingComponents": {
-    "van-button": "@vant/weapp/button/index",
-    "van-picker": "@vant/weapp/picker/index"
-  },
-=======
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   "requiredPrivateInfos": [
     "getLocation"
   ]

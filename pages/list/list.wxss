@@ -1,6 +1,19 @@
 page {
   background-color:#000000;
 }
+
+.noList {
+  position: absolute;
+  top: 400rpx;
+  left: 50%;
+  margin-left: -200rpx;
+}
+
+.noList image {
+  height: 400rpx;
+  width: 400rpx;
+}
+
 .listName {
   position: sticky;
   top: 0;

@@ -1,10 +1,4 @@
 <!--pages/clock/clock.wxml-->
-<<<<<<< HEAD
-<view class="background"><image src="../../image/background1.png"></image></view>
-<textarea name="" id="" cols="50" rows="20" placeholder="请输入您的打卡感想" placeholder-style="font-size:16px" class="detail" bindinput="write"></textarea>
-<button class="btn" size="mini" type="primary" bindtap="submitClock">定位打卡 </button>
-=======
 <view class="background"><image src="../../image/background2.png"></image></view>
-<textarea name="" id="" cols="50" rows="20" placeholder="请输入您的打卡感想" placeholder-style="color:#000"  class="detail" bindinput="write"></textarea>
+<textarea name="" id="" maxlength="-1" placeholder="请输入您的打卡感想" placeholder-style="color:#000"  class="detail" bindinput="write"></textarea>
 <button class="btn" bindtap="submitClock">定位打卡</button>
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e

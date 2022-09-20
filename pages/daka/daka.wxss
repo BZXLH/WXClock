@@ -1,16 +1,12 @@
 page {
   height: 100%;
-<<<<<<< HEAD
-=======
   color: #fff;
-  background-color: black;
 }
 
 .homepage {
   position: fixed;
   top: 0;
   height: 100%;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 }
 
 .background {
@@ -26,11 +22,8 @@ page {
 
 .today {
   position: absolute;
-<<<<<<< HEAD
-  top: 85rpx;
-=======
-  top: 180rpx;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+  top: 16vh;
+  /* top: 180rpx; */
   left: 50%;
   margin-left: -151rpx;
   width: 302rpx;
@@ -39,91 +32,55 @@ page {
   line-height: 302rpx;
   text-align: center;
   font-size: 28px;
-  font-weight: 600;
-<<<<<<< HEAD
-=======
-  /* 
+  font-weight: 600;/* 
   animation: allmove 1s alternate infinite; */
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 }
 
 .clockImg {
   position: absolute;
-<<<<<<< HEAD
-  top: 85rpx;
-=======
-  top: 180rpx;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+  top: 16vh;
   left: 50%;
   margin-left: -151rpx;
   width: 302rpx;
   height: 302rpx;
-<<<<<<< HEAD
-=======
   /* animation: allmove 1s alternate infinite; */
 }
 
-@keyframes allmove {
-  from {
-    top: 180rpx;
-    left: 50%;
-  }
-
-  to {
-    top: 185rpx;
-    left: 51%;
-  }
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+@keyframes allmove{
+  from{top:180rpx;left: 50%;}
+  to{top:185rpx;left: 51%;}
 }
 
 .list {
   position: absolute;
-<<<<<<< HEAD
-  top: 350rpx;
-  right: 150rpx;
-  width: 110rpx;
-  height: 110rpx;
-  border-radius: 50%;
-  padding: 20rpx 25rpx;
-=======
-  top: 140rpx;
+  top: 13vh;
+  /* top: 140rpx; */
   right: 85rpx;
   width: 110rpx;
   height: 110rpx;
   border-radius: 50%;
-  padding: 25rpx 30rpx;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+  padding: 15rpx 0;
   box-sizing: border-box;
   text-align: center;
-  font-size: 12px;
+  font-size: 30rpx;
   font-weight: 600;
 }
 
 .listImg {
   position: absolute;
-<<<<<<< HEAD
-  top: 350rpx;
-  right: 150rpx;
-=======
-  top: 145rpx;
+  top: 13vh;
   right: 80rpx;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   width: 110rpx;
   height: 110rpx;
 }
 
 .days {
   position: absolute;
-  top: 485rpx;
-<<<<<<< HEAD
-  left: 100rpx;
-  width: 275rpx;
-  height: 275rpx;
-=======
+  top: 43vh;
+  /* top: 485rpx; */
   left: 130rpx;
   width: 190rpx;
   height: 190rpx;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   padding: 55rpx 0;
   box-sizing: border-box;
   border-radius: 50%;
@@ -134,32 +91,16 @@ page {
 
 .daysImg {
   position: absolute;
-  top: 485rpx;
-<<<<<<< HEAD
-  left: 100rpx;
-  width: 275rpx;
-  height: 275rpx;
-=======
+  top: 43vh;
   left: 130rpx;
   width: 190rpx;
   height: 190rpx;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 }
 
 .finished {
   position: absolute;
-<<<<<<< HEAD
-  top: 465rpx;
-  left: 352rpx;
-  width: 182rpx;
-  height: 182rpx;
-  padding: 35rpx 0;
-  box-sizing: border-box;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 12px;
-=======
-  top: 450rpx;
+  top: 41vh;
+  /* top: 450rpx; */
   right: 60rpx;
   width: 200rpx;
   height: 200rpx;
@@ -168,98 +109,45 @@ page {
   border-radius: 50%;
   text-align: center;
   font-size: 18px;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   font-weight: 700;
 }
 
 .finishedImg {
   position: absolute;
-<<<<<<< HEAD
-  top: 465rpx;
-  left: 352rpx;
-  width: 182rpx;
-  height: 182rpx;
-}
-
-.times {
-  position: absolute;
-  top: 720rpx;
-  left: 180rpx;
-  width: 210rpx;
-  height: 210rpx;
-  padding: 50rpx 0;
-  box-sizing: border-box;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.timesImg {
-  position: absolute;
-  top: 720rpx;
-  left: 180rpx;
-  width: 210rpx;
-  height: 210rpx;
-=======
-  top: 450rpx;
+  top: 41vh;
   right: 60rpx;
   width: 200rpx;
   height: 200rpx;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 }
 
 .plans {
   position: absolute;
-<<<<<<< HEAD
-  top: 760rpx;
-  right: 170rpx;
-  width: 220rpx;
-  height: 220rpx;
-  padding:25rpx 0;
-  box-sizing: border-box;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 700;
-=======
-  top: 580rpx;
+  top: 52vh;
+  /* top: 580rpx; */
   right: 220rpx;
   width: 220rpx;
   height: 220rpx;
-  padding: 55rpx 0;
+  padding:55rpx 0;
   box-sizing: border-box;
   border-radius: 50%;
   text-align: center;
   font-size: 18px;
   font-weight: 600;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 }
 
 .plansImg {
   position: absolute;
-<<<<<<< HEAD
-  top: 760rpx;
-  right: 170rpx;
-=======
-  top: 580rpx;
+  top: 52vh;
   right: 220rpx;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   width: 220rpx;
   height: 220rpx;
 }
 
-<<<<<<< HEAD
-.ball1 {
-  position: absolute;
-  top: 680rpx;
-  right: 130rpx;
-=======
 .apply {
   position: absolute;
-  top: 320rpx;
+  top: 29vh;
+  /* top: 320rpx; */
   left: 30rpx;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   width: 131rpx;
   height: 105rpx;
   font-size: 13px;
@@ -271,40 +159,21 @@ page {
 
 .applyImg {
   position: absolute;
-<<<<<<< HEAD
-  top: 680rpx;
-  right: 130rpx;
-=======
-  top: 320rpx;
+  top: 29vh;
   left: 30rpx;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   width: 131rpx;
   height: 105rpx;
 }
 
-<<<<<<< HEAD
-.ball2 {
-  position: absolute;
-  top: 960rpx;
-  left: 200rpx;
-  width: 146rpx;
-  height: 104rpx;
-}
-.ball3 {
-  position: absolute;
-  top: 885rpx;
-  left: 100rpx;
-  width: 80rpx;
-  height: 80rpx;
-=======
 .times {
   position: absolute;
-  top: 720rpx;
+  top: 67vh;
+  /* top: 720rpx; */
   left: -50rpx;
   width: 292rpx;
   height: 208rpx;
   border-radius: 50%;
-  padding: 110rpx 0;
+  padding: 80rpx 0;
   box-sizing: border-box;
   text-align: center;
   font-size: 16px;
@@ -313,7 +182,7 @@ page {
 
 .timesImg {
   position: absolute;
-  top: 750rpx;
+  top: 67vh;
   left: -50rpx;
   width: 292rpx;
   height: 208rpx;
@@ -328,31 +197,13 @@ page {
   animation: fly1 0.9s linear infinite;
 }
 
-@keyframes fly1 {
-  0% {
-    right: 280rpx;
-    top: -10px;
-  }
-
-  25% {
-    right: 380rpx;
-    top: 40px;
-  }
-
-  50% {
-    right: 480rpx;
-    top: 80px;
-  }
-
-  75% {
-    right: 580rpx;
-    top: 120px;
-  }
-
-  100% {
-    right: 680rpx;
-    top: 160px;
-  }
+@keyframes fly1
+{
+    0%   { right: 280rpx; top:-10px;}
+    25%  { right: 380rpx; top:40px;}
+    50%  { right: 480rpx; top:80px;}
+    75%  { right: 580rpx; top:120px;}
+    100% { right: 680rpx; top:160px;}
 }
 
 .starImg2 {
@@ -364,31 +215,13 @@ page {
   animation: fly2 0.8s linear infinite;
 }
 
-@keyframes fly2 {
-  0% {
-    right: -10rpx;
-    top: 400rpx;
-  }
-
-  25% {
-    right: 200rpx;
-    top: 520rpx;
-  }
-
-  50% {
-    right: 400rpx;
-    top: 640rpx;
-  }
-
-  75% {
-    right: 600rpx;
-    top: 760rpx;
-  }
-
-  100% {
-    right: 700rpx;
-    top: 880rpx;
-  }
+@keyframes fly2
+{
+    0%   { right: -10rpx; top:400rpx;}
+    25%  { right: 200rpx; top:520rpx;}
+    50%  { right: 400rpx; top:640rpx;}
+    75%  { right: 600rpx; top:760rpx;}
+    100% { right: 700rpx; top:880rpx;}
 }
 
 .starImg3 {
@@ -400,31 +233,13 @@ page {
   animation: fly3 0.8s linear infinite;
 }
 
-@keyframes fly3 {
-  0% {
-    right: -10rpx;
-    top: 200rpx;
-  }
-
-  25% {
-    right: 200rpx;
-    top: 320rpx;
-  }
-
-  50% {
-    right: 400rpx;
-    top: 440rpx;
-  }
-
-  75% {
-    right: 600rpx;
-    top: 560rpx;
-  }
-
-  100% {
-    right: 700rpx;
-    top: 680rpx;
-  }
+@keyframes fly3
+{
+    0%   { right: -10rpx; top:200rpx;}
+    25%  { right: 200rpx; top:320rpx;}
+    50%  { right: 400rpx; top:440rpx;}
+    75%  { right: 600rpx; top:560rpx;}
+    100% { right: 700rpx; top:680rpx;}
 }
 
 .starImg4 {
@@ -436,31 +251,13 @@ page {
   animation: fly4 1.2s linear infinite;
 }
 
-@keyframes fly4 {
-  0% {
-    right: -10rpx;
-    top: 800rpx;
-  }
-
-  25% {
-    right: 200rpx;
-    top: 920rpx;
-  }
-
-  50% {
-    right: 400rpx;
-    top: 1040rpx;
-  }
-
-  75% {
-    right: 600rpx;
-    top: 1160rpx;
-  }
-
-  100% {
-    right: 700rpx;
-    top: 1280rpx;
-  }
+@keyframes fly4
+{
+    0%   { right: -10rpx; top:800rpx;}
+    25%  { right: 200rpx; top:920rpx;}
+    50%  { right: 400rpx; top:1040rpx;}
+    75%  { right: 600rpx; top:1160rpx;}
+    100% { right: 700rpx; top:1280rpx;}
 }
 
 /* 启动页动画 */
@@ -541,5 +338,4 @@ page {
   margin-left: -50rpx;
   height: 650rpx;
   width: 100rpx;
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 }

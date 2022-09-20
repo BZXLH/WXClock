@@ -11,6 +11,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    //跨页面修改数据、页面传值
+    let currentPage=getCurrentPages();
+    let prePage=currentPage[0];
+    console.log(prePage.data.type)
+    const type=(prePage.data.type=='上班'?'下班':'上班')
+    prePage.setData({
+      type:type
+    })
+    //跨页面修改数据、页面传值
     this.setData({
       times: wx.getStorageSync("times").data + 1,
     });

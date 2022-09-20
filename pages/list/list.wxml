@@ -3,11 +3,8 @@
   <view class="{{getAll}}" bindtap="showAllList">所有人</view>
   <view class="{{getMy}}" bindtap="showMyList">只看自己</view>
 </view>
-<<<<<<< HEAD
-<scroll-view hidden="{{!listCondition}}" style="background-color: #000;">
-=======
 <scroll-view hidden="{{!listCondition}}" style="background-color: #000;" id="scroll1">
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+  <view class="noList"><image src="../../image/noList.png" style="opacity:{{allList==[]?1:0}}"></image></view>
   <view class="listItem" wx:for="{{allList}}" wx:key="index">
     <view><image src="{{item.avatar}}"></image></view>
     <view> 
@@ -17,11 +14,8 @@
     <view class="type" style="border: 2px solid {{item.clockinType.color}}; color: {{item.clockinType.color}};">{{item.clockinType.type}}</view>
   </view>
 </scroll-view>
-<<<<<<< HEAD
-<scroll-view hidden="{{listCondition}}" style="background-color: #000;">
-=======
 <scroll-view hidden="{{listCondition}}" style="background-color: #000;" id="scroll2">
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+  <view class="noList"><image src="../../image/noList.png" style="opacity:{{allList==[]?1:0}}"></image></view>
   <view class="listItem" wx:for="{{myList}}" wx:key="index">
     <view><image src="{{item.avatar}}"></image></view>
     <view> 

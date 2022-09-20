@@ -12,9 +12,6 @@
 </view>
 <view class="reason">补卡原因</view>
 <!-- 获取textarea中的value -->
-<<<<<<< HEAD
-<textarea name="" id="" cols="50" rows="20" placeholder="请输入您的补卡原因" placeholder-style="font-size:16px" class="detail" model:value="{{reason}}"></textarea>
-=======
-<textarea name="" id="" cols="50" rows="20" placeholder="请输入您的补卡原因" placeholder-style="color:#000" class="detail" model:value="{{reason}}"></textarea>
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+<!-- textarea不限制字数用maxlength="-1" -->
+<textarea name="" id="" maxlength="-1" placeholder="请输入您的补卡原因" placeholder-style="color:#000" class="detail" model:value="{{reason}}"></textarea>
 <button class="btn" size="mini" type="primary" bindtap="submitApply">申请补卡</button>

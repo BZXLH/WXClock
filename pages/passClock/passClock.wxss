@@ -8,12 +8,6 @@ page {
 }
 
 .background image {
-<<<<<<< HEAD
-  height: 100%;
-  width: 750rpx;
-}
-
-=======
   position: fixed;
   top: 0;
   height: 120%;
@@ -31,7 +25,6 @@ page {
   background-color: rgba(0,0,0,.3);
 }
 
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 icon {
   position: absolute;
   top: 160rpx;
