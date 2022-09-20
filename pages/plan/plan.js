@@ -5,19 +5,6 @@ Page({
     iconArray:[0,1,2,3,4,5,6,7,8],
     imageIndex: 1,
     page:1,
-<<<<<<< HEAD
-    isLoading: false
-  },
-  onLoad: function (options) {
-    this.loadPlan();
-  },
-  onShow: function() {
-    this.loadPlan();
-  },
-  // 显示计划天数
-  //显示计划列表
-  loadPlan( ) {
-=======
     isLoading: false,
     status: '进行中',
     finishShow: false,
@@ -271,7 +258,6 @@ Page({
     this.setData({
       page: 1
     })
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     let that=this;
     wx.request({
       url: 'https://philil.com.cn/clockin_app/api/task',
@@ -279,40 +265,13 @@ Page({
       data: {
         page: that.data.page,
         size: 9,
-<<<<<<< HEAD
-        status: 0
-=======
         timeStatusCode: timeStatusCode
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       },
       header: {
         'Authorization':wx.getStorageSync('token')
       },
       success (res) {
         console.log(res.data);
-<<<<<<< HEAD
-        if(res.data.data===null) {
-          that.setData({
-            planArray:[]
-          })
-        }else{
-          that.setData({
-            planArray: res.data.data.content
-          }) 
-          //计算截止日期
-          var daysArray=[];
-          for(var i=0;i<res.data.data.content.length;i++) {
-              var endTime=new Date(res.data.data.content[i].endTime.replace(/-/g,"/"));//获取正确格式
-              var nowTime=new Date();//获取当前时间
-              var times=endTime.getTime()-nowTime.getTime();
-              var days=parseInt(times/(24*1000*3600))+1;//计算相差的天数
-              daysArray[i]=days;
-          }
-          that.setData({
-            //天数数组
-            dayIntervalArray: daysArray
-          })
-=======
          //判断token有没有过期
          if (res.data.code == 401) {
           checkLogin();
@@ -343,20 +302,15 @@ Page({
               dayIntervalArray: daysArray
             })
           }
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
         }
       }
     })
   },
-<<<<<<< HEAD
-  getMorePlan() {
-=======
   getMorePlan(timeStatusCode) {
     if(this.data.noPlanList) {
       return
     }
     console.log('加载更多计划');
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     var that=this;
     this.setData({
       isloading: true
@@ -367,51 +321,12 @@ Page({
       data: {
         page: that.data.page,
         size: 9,
-<<<<<<< HEAD
-        status: 0
-=======
         timeStatusCode: timeStatusCode
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       },
       header: {
         'Authorization':wx.getStorageSync('token')
       },
       success (res) {
-<<<<<<< HEAD
-        //判断是否有数据
-        if(res.data.data.content.length==0) {
-          wx.showLoading({
-            title: '没有更多计划了',
-          })
-        }else{
-          wx.showLoading({
-            title: '更多计划加载中',
-          })
-          var arr=[]
-          for(let i=0;i<res.data.data.content.length;i++) {
-            arr[i]=i;
-          }
-          that.setData({
-            iconArray: [...that.data.iconArray,...arr]
-          })
-          that.setData({
-            planArray: [...that.data.planArray,...res.data.data.content]
-          }) 
-          //计算截止日期
-          var daysArray=[];
-          for(var i=0;i<res.data.data.content.length;i++) {
-              var endTime=new Date(res.data.data.content[i].endTime.replace(/-/g,"/"));//获取正确格式
-              var nowTime=new Date();//获取当前时间
-              var times=endTime.getTime()-nowTime.getTime();
-              var days=parseInt(times/(24*1000*3600));//计算相差的天数
-              daysArray[i]=days;
-          }
-          that.setData({
-            //天数数组
-            dayIntervalArray:[...that.data.dayIntervalArray,...daysArray]
-          })
-       }
-=======
         if(res.data.data.content.length<=9) {
           that.setData({
             noPlanList: true
@@ -458,7 +373,6 @@ Page({
             })
           }
         }
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       },
       complete:()=> {
         wx.hideLoading()
@@ -468,20 +382,13 @@ Page({
       }
     })
     },
-<<<<<<< HEAD
-  // 下拉刷新
-=======
   // 上拉触底 加载更多任务
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   onReachBottom: function() {
     //节流
     if(this.data.isloading) return;
     this.setData({
       page: this.data.page+1
     })
-<<<<<<< HEAD
-    this.getMorePlan();
-=======
     if(this.data.status==='已逾期') {
       this.getMorePlan(1);
     }else if(this.data.status==='进行中') {
@@ -489,30 +396,21 @@ Page({
     }else if(this.data.status==='已完成') {
       this.getMorePlan(3);
     }
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   },
   // 点击计划详情页传递参数
   editPlan(event) {
     var id=event.currentTarget.dataset.id;
     var index=event.currentTarget.dataset.index;
     var taskName=this.data.planArray[index].taskName;
-<<<<<<< HEAD
-=======
     var beginTime1=this.data.planArray[index].beginTime;
     var beginTime2=beginTime1.substring(0,10);
     var beginTime3=beginTime2.replace('-','年');
     var beginTime=beginTime3.replace('-','月')+'日';
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     var endTime1=this.data.planArray[index].endTime;
     var endTime2=endTime1.substring(0,10);
     var endTime3=endTime2.replace('-','年');
     var endTime=endTime3.replace('-','月')+'日';
     var content=this.data.planArray[index].content;
-<<<<<<< HEAD
-    wx.navigateTo({
-      url: '../../pages/editplan/editplan?taskName='+taskName+'&endTime='+endTime+'&content='+content+'&id='+id
-    })
-=======
     var status=this.data.status;
     // 获取滚动条位置
     var that=this;
@@ -525,6 +423,5 @@ Page({
         url: '../../pages/editplan/editplan?taskName='+taskName+'&beginTime='+beginTime+'&endTime='+endTime+'&content='+content+'&id='+id+'&beginTimeSend='+beginTime2+'&endTimeSend='+endTime2+'&status='+status+'&pageTop='+pageTop
       })
     }).exec()
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   }
 })

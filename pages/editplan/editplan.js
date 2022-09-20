@@ -5,13 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-<<<<<<< HEAD
-    taskName:'',
-    endTime:'',
-    content:'',
-    id:1
-  }, 
-=======
     content: "",
     endTime: "",
     startTime: "",
@@ -23,16 +16,10 @@ Page({
     pageTop:''
   },
   // 接收传递过来的参数
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   onLoad(options) {
     console.log(options);
     this.setData({
       taskName:options.taskName,
-<<<<<<< HEAD
-      endTime:options.endTime,
-      content: options.content,
-      id: options.id
-=======
       content: options.content,
       endTimeSend:options.endTimeSend,
       startTimeSend: options.beginTimeSend,
@@ -158,7 +145,6 @@ Page({
             console.log('用户点击取消')
         }
       }
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     })
   },
   // 完成计划
@@ -170,26 +156,17 @@ Page({
       method:'PUT',
       data: {
         status: 1,
-<<<<<<< HEAD
-        id:that.data.id
-=======
         id:that.data.id,
         taskName: that.data.taskName,
         content: that.data.content,
         beginTime: that.data.startTimeSend+' 00:00',
         endTime:that.data.endTimeSend+' 24:00' 
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       },
       header: {
         'Authorization':wx.getStorageSync('token')
       },
       success (res) {
         console.log(res.data);
-<<<<<<< HEAD
-        wx.navigateTo({
-          url: '../../pages/finishNum/finishNum?num='+res.data.data
-        })
-=======
          //判断token有没有过期
          if (res.data.code == 401) {
           checkLogin();
@@ -200,7 +177,6 @@ Page({
             url: '../../pages/finishNum/finishNum?num='+res.data.data+'&pageTop='+that.data.pageTop
           })
         }
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       }
     })
   },
@@ -212,10 +188,6 @@ Page({
       content: '确定要删除吗？',
       success: function (sm) {
         if (sm.confirm) {
-<<<<<<< HEAD
-          console.log(111);
-=======
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
           wx.request({
             url: 'https://philil.com.cn/clockin_app/api/task/'+that.data.id,
             method:'DELETE',
@@ -224,10 +196,6 @@ Page({
             },
             success (res) {
               console.log(res.data);
-<<<<<<< HEAD
-              wx.navigateBack()
-            }
-=======
                //判断token有没有过期
               if (res.data.code == 401) {
                 checkLogin();
@@ -242,7 +210,6 @@ Page({
                   })
              }
               }
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
           })
         } else if (sm.cancel){
             console.log('用户点击取消')

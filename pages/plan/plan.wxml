@@ -1,10 +1,4 @@
 <!--pages/plan/plan.wxml-->
-<<<<<<< HEAD
-<image src='../../image/background1.png' class="bg"></image>
-<calender class="calender"></calender>
-<navigator url="/pages/addplan/addplan" open-type="navigate" class="add-plan">
-  <image src="../../images/ball/4.png"></image>
-=======
 <!-- 背景图片 -->
 <image src='../../image/background1.png' class="bg"></image>
 <!-- 日历 -->
@@ -26,29 +20,18 @@
 </view>
 <!-- 新增任务 -->
 <navigator url="/pages/addplan/addplan" open-type="navigate" class="add-plan">
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   <text>+</text>
 </navigator>
 <!-- 任务 -->
 <view id="plan" wx:for="{{planArray}}" wx:key="index">
   <view class="plan-item" bindtap="editPlan" data-index="{{index}}" data-id="{{item.id}}">
-<<<<<<< HEAD
-    <view class="plan-icon">
-      <image src="../../images/ball/{{iconArray[index]}}.png" mode='heightFix'></image>
-=======
     <view class="plan-icon" >
-      <image src="../../images/ball/{{iconArray[index]}}.png" mode='heightFix' class=" {{m1.arrSlice(item.endTime)==todayDate?'float':''}}"></image>
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
+      <image src="../../images/ball/{{m1.randomNum(0,8)}}.png" mode='heightFix' class=" {{m1.arrSlice(item.endTime)==todayDate?'float':''}}"></image>
     </view>
     <view class="plan-detail">
       <view class="plan-name">{{item.taskName}}</view>
       <view class="plan-content">{{item.content}}</view>
     </view>
-<<<<<<< HEAD
-    <view class="{{dayIntervalArray[index]>0?'plan-ddl':'plan-fail'}}">{{dayIntervalArray[index]}}天</view>
-  </view>
-</view>
-=======
     <view class="ddl">
       <view class="{{dayIntervalArray[index]>=0?'plan-ddl':'plan-fail'}}">{{dayIntervalArray[index]}}天</view>
       <view class="ddl-word">{{m1.arrSlice(item.endTime)}}</view>
@@ -62,9 +45,10 @@
   <view class="remind-add">点击“+”按钮立即创建</view>
 </view>
 <wxs module="m1">
-    //判断一个数是否在数组中
 	module.exports.arrSlice=function(arr) {
     	return arr.slice(0,10)
   }
+  module.exports.randomNum=function(start,stop) {
+    return parseInt(Math.random()*(stop-start)+start);
+  }
 </wxs>
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e

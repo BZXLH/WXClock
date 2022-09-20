@@ -7,9 +7,6 @@ Page({
     taskName: "",
     content: "",
     endTime: "",
-<<<<<<< HEAD
-    endTimeSend: "",
-=======
     startTime: "",
     endTimeSend: "",
     startTimeSend: "",
@@ -27,7 +24,6 @@ Page({
     this.setData({
       today:today
     })
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
   },
   getTaskname(event) {
     this.setData({
@@ -40,15 +36,6 @@ Page({
     });
   },
   bindDateChange: function (event) {
-<<<<<<< HEAD
-    console.log("picker发送选择改变，携带值为", event.detail.value);
-    var endTime1 = event.detail.value.replace("-", "年");
-    var endTime = endTime1.replace("-", "月") + "日";
-    console.log(endTime);
-    this.setData({
-      endTime: endTime,
-      endTimeSend: this.getNextDay(event.detail.value),
-=======
     var endTime1 = event.detail.value.replace("-", "年");
     var endTime = endTime1.replace("-", "月") + "日";
     this.setData({
@@ -62,7 +49,6 @@ Page({
     this.setData({
       startTime: startTime,
       startTimeSend: event.detail.value,
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     });
   },
   // 得到下一天
@@ -73,12 +59,6 @@ Page({
     //return d;
     //格式化
     return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
-<<<<<<< HEAD
-  },
-  postPlan() {
-    var that = this;
-    // console.log(that.data.endTimeSend);
-=======
   }, 
   postPlan() {
     var that=this;
@@ -90,32 +70,20 @@ Page({
       })
       return;
     }
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     wx.request({
       url: "https://philil.com.cn/clockin_app/api//task",
       method: "POST",
       data: {
         taskName: that.data.taskName,
         content: that.data.content,
-<<<<<<< HEAD
-        endTime: that.data.endTimeSend,
-=======
         beginTime: that.data.startTimeSend+' 00:00',
         endTime: that.data.endTimeSend+' 23:59'
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
       },
       header: {
         "content-type": "application/json",
         Authorization: wx.getStorageSync("token"),
       },
       success(res) {
-<<<<<<< HEAD
-        if (!res.data.data) return;
-        wx.navigateTo({
-          url: "../../pages/addNum/addNum?num=" + res.data.data,
-        });
-      },
-=======
         console.log(res);
          //判断token有没有过期
          if (res.data.code == 401) {
@@ -139,24 +107,19 @@ Page({
           }
           if (!res.data.data) return;
           wx.navigateTo({
-            url: "../../pages/addNum/addNum?num=" + res.data.data,
+            url: "../../pages/addNum/addNum?num=" + res.data.data+ '&taskName='+that.data.taskName,
           });
         }
       }
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
     });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-<<<<<<< HEAD
-  onLoad(options) {},
-=======
   onLoad(options) {
     this.getToday()
   },
->>>>>>> 0dabba9b0a80830be98b575385d5b9a3aa358b5e
 
   /**
    * 生命周期函数--监听页面初次渲染完成
