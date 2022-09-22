@@ -1,7 +1,7 @@
 <!--pages/reportSuccess/reportSuccess.wxml-->
-<image src="../../image/rocket.png" class="rocket"></image>
 
 <view class="container">
+  <image src="../../image/rocket.png" class="rocket" animation="{{rocketMove}}"></image>
   <image src="../../image/background1.png" class="bac"></image>
 
   <view class="blackBox">

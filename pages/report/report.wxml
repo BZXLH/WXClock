@@ -16,7 +16,7 @@
 
         <view class="infoItem">
           <view class="title">本周学习时长</view>
-          <view class="content">{{studyDuration}}小时</view>
+          <view class="content">{{processStr.studyDurationSlice(studyDuration)}}小时</view>
         </view>
 
         <view class="infoItem">
@@ -38,11 +38,24 @@
       <scroll-view class="finishedPlanList" scroll-y>
         <view class="finishedPlanItem" wx:for="{{completedPlan}}" wx:key="index" wx:if="{{completedPlan}}">
           <text class="left">{{item.taskName}}</text>
-          <text class="right">{{item.endTime}}</text>
+          <text class="right">{{processStr.edndTimeSlice(item.endTime)}}</text>
         </view>
       </scroll-view>
       <view class="error" wx:if="{{!completedPlan[0]}}">您本周没有完成的计划哟</view>
     </view>
+
+    <wxs module="processStr">
+      module.exports.studyDurationSlice = function(str) {
+        str = str.toString()
+        var index = str.indexOf('.')
+        var res = str.slice(0, index + 2)
+        return res
+      }
+
+      module.exports.edndTimeSlice = function(str) {
+        return str.slice(0, 11)
+      }
+    </wxs>
 
     <!-- 周记 -->
     <view class="weeklyReport" bindtap="gotoWeeklyReport">

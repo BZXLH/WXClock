@@ -4,7 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    h: 0,
     query: {},
+    rocketMove: {}
   },
 
   //跳转往期周报
@@ -28,13 +30,39 @@ Page({
     this.setData({
       query: options,
     });
-
+    //获取屏幕高度
+    let h = 770;
+    wx.getSystemInfo({
+      success: (result) => {
+        h = result.screenHeight;
+      },
+    });
+    this.setData({
+      h
+    });
+    
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {},
+  onReady() {
+        //火箭动画
+        const animation3 = wx.createAnimation({
+          delay: 500,
+          duration: 2500,
+          timingFunction: "ease-in",
+        });
+        animation3
+          .translateY(-this.data.h * 2)
+          .scale(0.5)
+          .step();
+        this.setData({
+          rocketMove: animation3.export(),
+        });
+    
+  },
 
   /**
    * 生命周期函数--监听页面显示

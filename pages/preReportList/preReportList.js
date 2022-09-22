@@ -53,7 +53,7 @@ Page({
           },
           success: (res) => {
             //判断token有没有过期
-            if (res.data.code == 401) {
+            if (res.statusCode == 401) {
               checkLogin();
               return
             }
@@ -132,7 +132,7 @@ Page({
       },
       success: (res) => {
         //判断token有没有过期
-        if (res.data.code == 401) {
+        if (res.statusCode == 401) {
           checkLogin();
           return
         }

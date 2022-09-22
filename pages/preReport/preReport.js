@@ -64,7 +64,7 @@ Page({
             week: this.data.query.week
           },
           success: (res) => {
-            if (res.data.code == 401) {
+            if (res.statusCode == 401) {
               checkLogin();
               return;    
             }
@@ -144,7 +144,7 @@ Page({
         week: this.data.query.week
       },
       success: (res) => {
-        if (res.data.code == 401) {
+        if (res.statusCode == 401) {
           checkLogin();
           return;    
         }
