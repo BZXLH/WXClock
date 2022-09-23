@@ -164,7 +164,7 @@ Page({
       complete: () => {
         wx.stopPullDownRefresh();
         this.setData({
-          isLoading: true
+          isLoading: false
         })    
       }
     })

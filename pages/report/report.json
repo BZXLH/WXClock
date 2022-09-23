@@ -2,5 +2,5 @@
   "usingComponents": {},
   "navigationBarTitleText": "每周总结",
   "navigationBarBackgroundColor": "#000",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh":true
 }

@@ -2,7 +2,9 @@
 <image src="../../image/background1.png" class="bac"></image>
 
 
+
 <view class="reportContainer">
+
     <!-- 基本情况 -->
     <view class="basicInfo">
       <!-- 背景虚化效果 -->
@@ -53,7 +55,7 @@
       }
 
       module.exports.edndTimeSlice = function(str) {
-        return str.slice(0, 11)
+        return str.slice(0, 8)
       }
     </wxs>
 

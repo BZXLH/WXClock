@@ -53,9 +53,10 @@
       }
 
       module.exports.edndTimeSlice = function(str) {
-        return str.slice(0, 11)
+        return str.slice(0, 8)
       }
     </wxs>
+
 
     <!-- 周记 -->
     <view class="weeklyReport">
@@ -74,7 +75,7 @@
       <view class="weeklyReportError" wx:if="{{!preWeeklyReportContent}}">您这周没有填写周记</view>
   </view>
 
-  <view class="btn">
-    <button id="backBtn" bindtap="GoBack">返回</button>
+  <view class="btn"  bindtap="GoBack">
+    <button id="backBtn">返回</button>
   </view>
 </view>
