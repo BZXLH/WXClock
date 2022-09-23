@@ -45,13 +45,13 @@ Page {
 }
 
 .icon {
-  margin-top: 80rpx;
+  margin-top: 10%;
   text-align: center;
-  height: 128rpx;
+  height: 16%;
 }
 
 .msg {
-  margin-top: 70rpx;
+  margin-top: 18%;
   color: white;
 }
 
@@ -61,7 +61,7 @@ Page {
 }
 
 .successTitle {
-  margin-bottom: 16rpx;
+  margin-bottom: 2%;
   font-size: 56rpx;
 }
 
@@ -70,20 +70,21 @@ Page {
 }
 
 .btn {
-  margin-top: 100rpx;
+  margin-top: 20%;
 }
 
 #otherReport,
 #backButton {
-  width: 300rpx;
-  height: 80rpx;
+  width: 61%;
+  height: 10%;
   background: rgba(255, 255, 255, .1);
   color: #d4d3d8;
   border-radius: 8rpx;
   font-size: 34rpx;
   font-weight: 400;
+  white-space: nowrap;
 }
 
 #otherReport {
-  margin-bottom: 50rpx;
+  margin-bottom: 6%
 }
