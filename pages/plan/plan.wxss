@@ -23,7 +23,7 @@
 .welcome {
   position: relative;
   z-index: 111;
-  width: 1000%;
+  width: 100%;
   height: 128rpx;
   margin-top: 20rpx;
   margin-bottom: 20rpx;

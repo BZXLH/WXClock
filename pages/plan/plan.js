@@ -134,7 +134,6 @@ Page({
   // 点击更换任务状态
   changeStatus() {
     if(this.data.fold===1) {
-      console.log('change');
       this.setData({
         display: 'block',
         deg: '180deg',
@@ -171,7 +170,6 @@ Page({
         })
       }
     }else {
-      console.log('change1');
       this.setData({
         display: 'block',
         deg: '0',
@@ -278,6 +276,12 @@ Page({
          if (res.statusCode == 401) {
           checkLogin();
           return;
+        }
+        if(res.data.data===null) {
+          that.setData({
+            planArray:[],
+            noPlan: true
+          })
         }
         if (res.data.code == 200) {
           if(res.data.data===null) {
