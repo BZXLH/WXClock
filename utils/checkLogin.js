@@ -19,7 +19,8 @@ export default function checkLogin() {
           }
         });
       },
-      fail() {
+      fail(e) {
+        console.log(e);
         wx.showToast({ title: "登录失败" });
         reject();
       },

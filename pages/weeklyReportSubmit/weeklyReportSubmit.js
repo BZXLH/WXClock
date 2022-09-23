@@ -7,12 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLoading: false, //是否在加载
     isUpload: false, //是否在上传周记
     weeklyReportContent: "", //要上传的周记内容
     preWeeklyReportContent: "",//上一次上传成功的周记内容
     query: {}//接收传参
   },
+    isLoading: false, //是否在加载
 
   // 监听周记输入
   inputReport(e) {
@@ -20,11 +20,12 @@ Page({
       weeklyReportContent: e.detail.value,
     });
   },
-  
 
   // 上传周记
-  submit() {
-    if (this.data.isLoading) {
+  submit(e) {
+    console.log(e);
+    if (this.isLoading) {
+      console.log(1234);
       return
     }
 
@@ -89,13 +90,9 @@ Page({
    */
   onLoad(options) {
     //loading
-    wx.showLoading({
+        this.isLoading = true;
+        wx.showLoading({
       title: '加载中...',
-      success: () => {
-        this.setData({
-          isLoading: true
-        });
-      }
     })
     
 
@@ -126,11 +123,9 @@ Page({
         }
       },
       complete: () => {
-        wx.hideLoading({
+            this.isLoading = false;
+            wx.hideLoading({
           success: () => {
-            this.setData({
-              isLoading: false
-            })    
           },
         })    
       }
@@ -169,9 +164,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    this.setData({
-      isLoading: true
-    })    
+    this.isLoading = true;
 
     // 请求周记
     wx.request({
@@ -196,9 +189,7 @@ Page({
       },
       complete: () => {
         wx.stopPullDownRefresh()
-        this.setData({
-          isLoading: false
-        })    
+        this.isLoading = true;  
       }
     })      
 
