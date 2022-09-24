@@ -1,6 +1,6 @@
 <!--pages/passClock/passClock.wxml-->
 <view class="background"><image src="../../image/background2.png"></image></view>
 <view class="black"></view>
-<icon  type="success" size="54"></icon>
-<view class="succeed">打卡成功<text style="font-size: 13px;">\n这是你第{{times}}打卡!</text></view>
+<icon  type="success" size="110rpx"></icon>
+<view class="succeed">打卡成功<text style="font-size: 26rpx;">\n这是你第{{times}}打卡!</text></view>
 <navigator open-type="navigateBack" delta="2" class="back">返回</navigator>

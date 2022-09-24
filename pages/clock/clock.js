@@ -1,14 +1,15 @@
 // pages/clock/clock.js
+import throttle from "../../utils/tool"
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     thinking: "",
-    maxLongitude: 113.386,
+    maxLongitude: 113.39159,
     minLongitude: 113.384,
     maxLatitude: 23.043,
-    minLatitude: 23.04,
+    minLatitude: 22.93772,
   },
   write(e) {
     this.setData({ thinking: e.detail.value });
@@ -54,8 +55,7 @@ Page({
    */
   onShareAppMessage() {},
 
-  submitClock() {
-    console.log(this.data.thinking);
+  submitClock:throttle(function(){
     if ((this.data.thinking == "")||(this.data.thinking.trim()=="")) {
       wx.showToast({
         title: "感想不能为空",
@@ -64,33 +64,14 @@ Page({
       });
       return;
     }
-    wx.getSetting({
-      success: (res) => {
-        let authSetting = res.authSetting
-        if (!(authSetting['scope.userLocation'] || authSetting['scope.userLocation'] == undefined)){
-          wx.showModal({
-            title: '您未开启地理位置授权',
-            content: '是否前往授权？',
-            success: res => {
-              if (res.confirm) {
-                wx.openSetting()
-              }
-            }
-          })
-        }
-      } 
+    wx.showLoading({
+      title: '获取定位中...',
     })
-    wx.showToast({
-      title: "获取定位中...",
-      icon: "loading",
-      duration: 5000,
-    });
     wx.getLocation({
       isHighAccuracy: true,
       highAccuracyExpireTime: 5000,
       success: (res) => {
-        console.log(res);
-        wx.hideToast();
+        //console.log(res);
         if (
           res.latitude <= this.data.maxLatitude &&
           res.latitude >= this.data.minLatitude &&
@@ -109,8 +90,9 @@ Page({
             },
             header: header,
             success: (res) => {
-              console.log(res)
+              //console.log(res)
               wx.setStorageSync("times", res.data);
+              wx.hideLoading();
               wx.navigateTo({
                 url: "../passClock/passClock",
               });
@@ -125,12 +107,43 @@ Page({
             },
           });
         } else {
-          console.log(res);
           wx.navigateTo({
             url: "../failClock/failClock",
           });
         }
       },
+      fail:function(){
+        wx.hideToast()
+        //判断是否授权定位
+        wx.getSetting({
+          success: (res) => {
+            let authSetting = res.authSetting
+            if (!(authSetting['scope.userLocation'] || authSetting['scope.userLocation'] == undefined)){
+              wx.showModal({
+                title: '您未开启地理位置授权',
+                content: '是否前往授权？',
+                success: res => {
+                  if (res.confirm) {
+                    wx.openSetting()
+                  }else{
+                    //若点击取消
+                    wx.navigateTo({
+                      url: "../failClock/failClock",
+                    });
+                  }
+                }
+              })
+            }else{
+              //用户已授权，但是获取地理位置失败，提示用户去系统设置中打开定位
+              wx.showModal({
+                title: '',
+                content: '请在系统设置中打开定位服务',
+                confirmText: '确定'
+              })
+            }
+          } 
+        })
+      }
     });
-  },
+  },3000)
 });

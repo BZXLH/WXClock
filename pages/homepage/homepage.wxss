@@ -31,7 +31,7 @@ page {
   border-radius: 50%;
   line-height: 302rpx;
   text-align: center;
-  font-size: 28px;
+  font-size: 56rpx;
   font-weight: 600;/* 
   animation: allmove 1s alternate infinite; */
 }
@@ -85,7 +85,7 @@ page {
   box-sizing: border-box;
   border-radius: 50%;
   text-align: center;
-  font-size: 18px;
+  font-size: 36rpx;
   font-weight: 600;
 }
 
@@ -108,7 +108,7 @@ page {
   box-sizing: border-box;
   border-radius: 50%;
   text-align: center;
-  font-size: 18px;
+  font-size: 36rpx;
   font-weight: 700;
 }
 
@@ -131,7 +131,7 @@ page {
   box-sizing: border-box;
   border-radius: 50%;
   text-align: center;
-  font-size: 18px;
+  font-size: 36rpx;
   font-weight: 600;
 }
 
@@ -150,7 +150,7 @@ page {
   left: 30rpx;
   width: 131rpx;
   height: 105rpx;
-  font-size: 13px;
+  font-size: 26rpx;
   text-align: center;
   font-weight: 600;
   padding: 18rpx 30rpx;
@@ -176,7 +176,7 @@ page {
   padding: 80rpx 0;
   box-sizing: border-box;
   text-align: center;
-  font-size: 16px;
+  font-size: 32rpx;
   font-weight: 600;
 }
 

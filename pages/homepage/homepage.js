@@ -1,4 +1,4 @@
-// pages/daka/daka.js
+
 import checkLogin from "../../utils/checkLogin";
 Page({
   /**
@@ -33,7 +33,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(options)
+    //console.log(options)
     /* 首页内容 */
     this.getInfo();
     var animation = wx.createAnimation({
@@ -228,7 +228,7 @@ Page({
       });
     } else {
       wx.navigateTo({
-        url: "/pages/buka/buka",
+        url: "/pages/applyClock/applyClock",
       });
     }
   },
@@ -244,9 +244,9 @@ Page({
       method: "get",
       header: header,
       success: (res) => {
-        console.log(header)
+        /* console.log(header)
         console.log(res.statusCode);
-        console.log(res);
+        console.log(res); */
         if (res.statusCode == 401) {
           checkLogin()
           return;

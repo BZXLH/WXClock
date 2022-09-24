@@ -1,4 +1,5 @@
 // pages/buka/buka.js
+import throttle from "../../utils/tool"
 Page({
   /**
    * 页面的初始数据
@@ -70,7 +71,6 @@ Page({
   },
 
   getTime(e) {
-    console.log(this.data.timeList);
     this.setData({
       clockTime: this.data.timeList[e.detail.value].onTime,
     });
@@ -82,7 +82,7 @@ Page({
     });
   },
 
-  submitApply() {
+  submitApply:throttle(function(){
     if (this.data.clockTime == "请选择补卡日期") {
       wx.showToast({
         title: "请选择补卡日期",
@@ -119,7 +119,6 @@ Page({
           reissueTime: this.data.clockTime + " " + this.data.detailTime,
         },
         success: (res) => {
-          console.log(res);
           if (res.statusCode == 200) {
             wx.showToast({
               title: "申请成功",
@@ -128,7 +127,7 @@ Page({
               success: function () {
                 setTimeout(() => {
                   wx.switchTab({
-                    url: "../daka/daka",
+                    url: "../homepage/homepage",
                   });
                 }, 1000);
               },
@@ -150,5 +149,5 @@ Page({
         },
       });
     }
-  },
+  },3000)
 });

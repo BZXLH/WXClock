@@ -1,8 +1,7 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/start/start",
-    "pages/daka/daka",
+    "pages/homepage/homepage",
     "pages/report/report",
     "pages/personal/personal",
     "pages/personal/editInfo/editInfo",
@@ -11,13 +10,12 @@
     "pages/personal/leave/leaveDetail/leaveDetail",
     "pages/personal/examin/examin",
     "pages/personal/examin/examinCard/examinCard",
-    "pages/weeklyReportSubmit/weeklyReportSubmit",
     "pages/personal/respond/respond",
     "pages/personal/respond/respondDetail/respondDetail",
     "pages/first/first",
     "pages/clock/clock",
     "pages/list/list",
-    "pages/buka/buka",
+    "pages/applyClock/applyClock",
     "pages/passClock/passClock",
     "pages/failClock/failClock",
     "pages/reportSuccess/reportSuccess",
@@ -27,8 +25,7 @@
     "pages/addplan/addplan",
     "pages/editplan/editplan",
     "pages/addNum/addNum",
-    "pages/finishNum/finishNum",
-    "pages/personal/usersTimeLong/usersTimeLong"
+    "pages/finishNum/finishNum"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -45,7 +42,7 @@
     "selectedColor": "#07C160",
     "list": [{
         "text": "打卡",
-        "pagePath": "pages/daka/daka",
+        "pagePath": "pages/homepage/homepage",
         "iconPath": "/image/clock1.png",
         "selectedIconPath": "/image/clock2.png"
       },

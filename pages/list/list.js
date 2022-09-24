@@ -1,4 +1,5 @@
 // pages/list/list.js
+import throttle from "../../utils/tool"
 Page({
   /**
    * 页面的初始数据
@@ -62,16 +63,15 @@ Page({
 
   // 获取滚动条当前位置
   onPageScroll:function(e){
-    console.log(e)
-      if(this.data.getAll=="selected"){
-        this.setData({
-          Allheight:e.scrollTop
-        })
-      }else if(this.data.getMy=="selected"){
-        this.setData({
-          Myheight:e.scrollTop
-        })
-      }
+    if(this.data.getAll=="selected"){
+      this.setData({
+        Allheight:e.scrollTop
+      })
+    }else if(this.data.getMy=="selected"){
+      this.setData({
+        Myheight:e.scrollTop
+      })
+    }
   },
 
   showAllList(){
@@ -103,8 +103,8 @@ Page({
         pageSize:this.data.pageSize
       },
       success:(res)=>{
-        console.log(res)
-        console.log(res.data.data.content)
+        /* console.log(res)
+        console.log(res.data.data.content) */
         this.setData({
           allList:[...this.data.allList,...res.data.data.content],
           AlltoBottom :res.data.data.last
@@ -147,8 +147,8 @@ Page({
       },
       header: header,
       success:(res)=>{
-        console.log(res)
-        console.log(res.data.data.content)
+        /* console.log(res)
+        console.log(res.data.data.content) */
         this.setData({
           myList:[...this.data.myList,...res.data.data.content],
           MytoBottom :res.data.data.last

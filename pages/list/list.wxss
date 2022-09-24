@@ -27,14 +27,14 @@ page {
 
 .listName .unselected {
   line-height: 100rpx;
-  font-size: 16px;
+  font-size: 32rpx;
   transition:all .2s;
 }
 
 .listName .selected {
   line-height: 100rpx;
   border-bottom: solid 2px #ffffff;
-  font-size: 20px;
+  font-size: 40rpx;
 }
 
 .listItem {
@@ -56,7 +56,7 @@ page {
 }
 
 .listItem .name {
-  font-size: 20px;
+  font-size: 40rpx;
 }
 
 .listItem .type {
@@ -68,7 +68,11 @@ page {
   line-height: 76rpx;
   text-align: center;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 24rpx;
   transform: rotate(30deg);
   border: 2px solid #fff;
+}
+
+.time {
+  font-size: 40rpx;
 }

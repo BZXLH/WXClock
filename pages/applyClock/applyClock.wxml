@@ -14,4 +14,4 @@
 <!-- 获取textarea中的value -->
 <!-- textarea不限制字数用maxlength="-1" -->
 <textarea name="" id="" maxlength="-1" placeholder="请输入您的补卡原因" placeholder-style="color:#000" class="detail" model:value="{{reason}}"></textarea>
-<button class="btn" size="mini" type="primary" bindtap="submitApply">申请补卡</button>
+<button class="btn" size="mini" bindtap="submitApply">申请补卡</button>

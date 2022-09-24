@@ -31,7 +31,7 @@ page {
   top: 135rpx;
   left: 130rpx;
   width: 500rpx;
-  font-size: 18px;
+  font-size: 36rpx;
 }
 
 .list {
@@ -49,14 +49,14 @@ page {
   top: 213rpx;
   left: 130rpx;
   width: 500rpx;
-  font-size: 18px;
+  font-size: 36rpx;
 }
 
 .reason {
   position: absolute;
   top: 285rpx;
   left: 130rpx;
-  font-size: 18px;
+  font-size: 36rpx;
 }
 
 .detail {
@@ -65,13 +65,18 @@ page {
   left: 130rpx;
   width: 500rpx;
   height: 450rpx;
-  font-size: 18px;
+  font-size: 36rpx;
 }
 
 .btn {
   position: absolute;
   top: 910rpx;
   left: 50%;
-  margin-left: -80rpx;
+  font-size: 30rpx;
+  padding: 20rpx;
+  box-sizing: content-box;
+  transform: translateX(-50%);
   font-weight: normal;
+  color: #fff;
+  background-image: linear-gradient(to right,#ac1b5f,#5b4490);
 }

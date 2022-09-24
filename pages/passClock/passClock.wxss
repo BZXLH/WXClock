@@ -38,7 +38,7 @@ icon {
   left: 50%;
   margin-left: -115rpx;
   text-align: center;
-  font-size: 25px;
+  font-size: 50rpx;
   letter-spacing: 4rpx;
   line-height: 40rpx;
   color: #fff;
@@ -52,6 +52,7 @@ icon {
   height: 80rpx;
   width: 200rpx;
   text-align: center;
+  font-size: 36rpx;
   line-height: 80rpx;
   border-radius: 10rpx;
   background-color: rgba(225,225,225,.3);

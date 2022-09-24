@@ -14,7 +14,6 @@ Page({
     //跨页面修改数据、页面传值
     let currentPage=getCurrentPages();
     let prePage=currentPage[0];
-    console.log(prePage.data.type)
     const type=(prePage.data.type=='上班'?'下班':'上班')
     prePage.setData({
       type:type
