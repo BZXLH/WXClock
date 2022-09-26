@@ -9,6 +9,7 @@ export default function checkLogin() {
     // 获取openId并存入storage中
     wx.login({
       success({ code }) {
+        console.log(code);
         wx.hideLoading();
         login({ code }).then(({ code, data }) => {
           if (code == 401) {

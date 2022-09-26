@@ -45,6 +45,7 @@ Page({
    */
   onLoad: function (options) {
 
+
     // const reg = new RegExp("\d+[.]\d", "g") 
     // const res = str.match(reg)
     // console.log(res);

@@ -26,7 +26,7 @@ Page({
     let res = await login(true);
     if (res) {
       wx.switchTab({
-        url: "/pages/daka/daka",
+        url: "/pages/homepage/homepage",
       });
     } else {
       wx.redirectTo({
