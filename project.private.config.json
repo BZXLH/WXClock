@@ -12,6 +12,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/report/report",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLoading: false,//是否在加载
     token: "",
     completedPlan: [], //完成的任务
     weeklyReportContent: "", //周记的内容
@@ -16,9 +15,11 @@ Page({
     finishedTaskCount: 0,
   },
 
+  isLoading: false,//是否在加载
+
   // 返回
   GoBack() {
-    if (this.data.isLoading) {
+    if (this.isLoading) {
       return
     }
 
@@ -32,13 +33,9 @@ Page({
    */
   onLoad(options) {
     //loading
+    this.isLoading = true
     wx.showLoading({
       title: '加载中...',
-      success: () => {
-        this.setData({
-          isLoading: true
-        });
-      }
     })
     
     // 接收导航传参
@@ -83,14 +80,8 @@ Page({
           },
           complete: () => {
             //关闭loading
-            wx.hideLoading({
-              success: () => {
-                this.setData({
-                  isLoading: false
-                })
-               }
-            })
-
+            wx.hideLoading({})
+            this.isLoading = false
             
           }
         })
@@ -129,9 +120,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    this.setData({
-      isLoading: true
-    })
+    this.isLoading = true
 
     // 请求内容
     wx.request({
@@ -163,9 +152,7 @@ Page({
       },
       complete: () => {
         wx.stopPullDownRefresh();
-        this.setData({
-          isLoading: false
-        })    
+        this.isLoading = false
       }
     })
   },

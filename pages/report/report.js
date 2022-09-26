@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLoading: false,//是否在加载
     week: 0, //周次
     completedPlan: [], //完成的计划
     preWeeklyReportContent: "", //请求获取的周记内容
@@ -14,6 +13,9 @@ Page({
     studyDuration: 0, //学习时长
     finishedTaskCount: 0,
   },
+
+  isLoading: false,//是否在加载
+
 
   //前往周记页面
   gotoWeeklyReport() {
@@ -29,7 +31,7 @@ Page({
 
   //往期周波
   GotoOtherReport() {
-    if (this.data.isLoading) {
+    if (this.isLoading) {
       return
     }
 
@@ -48,13 +50,9 @@ Page({
     // console.log(res);
 
     //loading
+    this.isLoading = true
     wx.showLoading({
       title: '加载中...',
-      success: () => {
-        this.setData({
-          isLoading: true
-        });
-      }
     })
 
     // 获取当前日期
@@ -123,14 +121,8 @@ Page({
               },
               complete: () => {    
                 //关闭loading
-                wx.hideLoading({
-                  success: () => {
-                    this.setData({
-                      isLoading: false
-                    })
-                  }
-                })
-       
+                wx.hideLoading({})
+                this.isLoading = false
               }
             })
           },
@@ -167,11 +159,8 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-    this.setData({
-      isLoading: true
-    })
-
+  onPullDownRefresh() {
+    this.isLoading = true
     // 请求内容
     wx.request({
       url: 'https://philil.com.cn/clockin_app/api//weekReport/getWeekInfo',
@@ -202,9 +191,7 @@ Page({
       },
       complete: () => {
         wx.stopPullDownRefresh();
-        this.setData({
-          isLoading: false
-        })
+        this.isLoading = false
       }
     })
 

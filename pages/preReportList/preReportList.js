@@ -5,15 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLoading: false,//是否在加载中
     token: '',
     preReport: [],//请求返回的周报信息
     avatar: ''//头像
   },
 
+  isLoading: false,//是否在加载中
+
   // 前往对应的周报
   Gotoreport(e) {
-    if (this.data.isLoading) {
+    if (this.isLoading) {
       return
     }
 
@@ -27,13 +28,9 @@ Page({
    */
   onLoad(options) {
     //loading
+    this.isLoading = true
     wx.showLoading({
       title: '加载中...',
-      success: () => {
-        this.setData({
-          isLoading: true
-        });
-      }
     })
 
 
@@ -67,13 +64,8 @@ Page({
           },
 
           complete: () => {
-            wx.hideLoading({
-              success: () => {
-                this.setData({
-                  isLoading: false
-                });        
-              },
-            })        
+            wx.hideLoading({})
+            this.isLoading = false        
           }
         })
       }
@@ -83,16 +75,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {
-    wx.hideLoading({
-      success: () => {
-        this.setData({
-          isLoading: false
-        });        
-      },
-    })
-
-  },
+  onReady() {},
 
   /**
    * 生命周期函数--监听页面显示
@@ -119,9 +102,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    this.setData({
-      isLoading: true
-    });
+    this.isLoading = true
 
     // 下拉重新请求数据
     wx.request({
@@ -145,9 +126,7 @@ Page({
 
       complete: () => {
         wx.stopPullDownRefresh();
-        this.setData({
-          isLoading: false
-        });
+        this.isLoading = false
       }
     })
 
