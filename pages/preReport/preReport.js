@@ -1,24 +1,23 @@
 // pages/preReport/preReport.js
-import checkLogin from "../../utils/checkLogin";
+import request from "../../api/request";
 
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    token: "",
     completedPlan: [], //完成的任务
     weeklyReportContent: "", //周记的内容
-    query: {}, //传递过来的参数
     clockCount: 0, //打卡次数
     studyDuration: 0, //学习时长
     finishedTaskCount: 0,
   },
 
+  query: {}, //传递过来的参数
   isLoading: false,//是否在加载
 
   // 返回
-  GoBack() {
+  goBack() {
     if (this.isLoading) {
       return
     }
@@ -31,7 +30,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  async onLoad(options) {
     //loading
     this.isLoading = true
     wx.showLoading({
@@ -39,54 +38,43 @@ Page({
     })
     
     // 接收导航传参
-    this.setData({
-      query: options,
-    });
-    //拿token
-    wx.getStorage({
-      key: "token",
-      success: (res) => {
+    this.query = options
+
+    //获取周次
+    const {week} = this.query
+
+    //请求内容
+    try {
+      const preReportData = await request({
+        url: "/weekReport/getWeekInfo",
+        method: "GET",
+        data: {
+          week
+        }
+      })
+
+      console.log(preReportData);
+
+      if (preReportData.code == 200) {
+        const {clockNum, studyDuration, finishedTaskNum, finishedTask, weekReport} = preReportData.data;
         this.setData({
-          token: res.data,
+          completedPlan: finishedTask,
+          preWeeklyReportContent: weekReport,
+          clockCount: clockNum, //打卡次数
+          studyDuration, //学习时长
+          finishedTaskCount: finishedTaskNum,                            
         });
+      }
+    } catch (error) {
+      console.log(error);
+    }
 
-        // 请求内容
-        wx.request({
-          url: 'https://philil.com.cn/clockin_app/api//weekReport/getWeekInfo',
-          method: "GET",
-          header: {
-            Authorization: this.data.token,
-          },
-          data: {
-            week: this.data.query.week
-          },
-          success: (res) => {
-            if (res.statusCode == 401) {
-              checkLogin();
-              return;    
-            }
+    //关闭loading
+    wx.hideLoading({})
+    this.isLoading = false
+    
 
-            if (res.data.code == 200) {
-              const {clockNum, studyDuration, finishedTaskNum, finishedTask, weekReport} = res.data.data;
-              this.setData({
-                completedPlan: finishedTask,
-                preWeeklyReportContent: weekReport,
-                clockCount: clockNum, //打卡次数
-                studyDuration, //学习时长
-                finishedTaskCount: finishedTaskNum,                            
-              });
-
-            }
-          },
-          complete: () => {
-            //关闭loading
-            wx.hideLoading({})
-            this.isLoading = false
-            
-          }
-        })
-      },
-    });
+    
   },
 
   /**
@@ -94,7 +82,7 @@ Page({
    */
   onReady() {
     
-    const {week} = this.data.query
+    const {week} = this.query
     // 动态修改标题
     wx.setNavigationBarTitle({
       title: `第${week ? week : 0}周周报`,
@@ -119,42 +107,39 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh() {
+  async onPullDownRefresh() {
     this.isLoading = true
-
-    // 请求内容
-    wx.request({
-      url: 'https://philil.com.cn/clockin_app/api//weekReport/getWeekInfo',
-      method: "GET",
-      header: {
-        Authorization: this.data.token,
-      },
-      data: {
-        week: this.data.query.week
-      },
-      success: (res) => {
-        if (res.statusCode == 401) {
-          checkLogin();
-          return;    
+    const {week} = this.query
+    //请求内容
+    try {
+      const preReportData = await request({
+        url: "/weekReport/getWeekInfo",
+        method: "GET",
+        data: {
+          week
         }
+      })
 
-        if (res.data.code == 200) {
-          const {clockNum, studyDuration, finishedTaskNum, finishedTask, weekReport} = res.data.data;
-          this.setData({
-            completedPlan: finishedTask,
-            preWeeklyReportContent: weekReport,
-            clockCount: clockNum, //打卡次数
-            studyDuration, //学习时长
-            finishedTaskCount: finishedTaskNum,                            
-          });
+      console.log(preReportData);
 
-        }
-      },
-      complete: () => {
-        wx.stopPullDownRefresh();
-        this.isLoading = false
+      if (preReportData.code == 200) {
+        const {clockNum, studyDuration, finishedTaskNum, finishedTask, weekReport} = preReportData.data;
+        this.setData({
+          completedPlan: finishedTask,
+          preWeeklyReportContent: weekReport,
+          clockCount: clockNum, //打卡次数
+          studyDuration, //学习时长
+          finishedTaskCount: finishedTaskNum,                            
+        });
       }
-    })
+    } catch (error) {
+      console.log(error);
+    }
+    
+    wx.stopPullDownRefresh();//停止下拉刷新
+    this.isLoading = false//关闭阀门
+
+    
   },
 
   /**

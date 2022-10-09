@@ -19,6 +19,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/preReportList/preReportList",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/weeklyReportSubmit/weeklyReportSubmit",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

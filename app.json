@@ -21,6 +21,7 @@
     "pages/reportSuccess/reportSuccess",
     "pages/preReportList/preReportList",
     "pages/preReport/preReport",
+    "pages/weeklyReportSubmit/weeklyReportSubmit",
     "pages/plan/plan",
     "pages/addplan/addplan",
     "pages/editplan/editplan",

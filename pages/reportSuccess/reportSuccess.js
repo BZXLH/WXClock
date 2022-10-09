@@ -4,13 +4,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    h: 0,
-    query: {},
-    rocketMove: {}
+    rocketMove: {},
+    query: {},//页面跳转携带的参数
   },
 
+  h: 0,//页面高度
+
   //跳转往期周报
-  GotoOtherReport() {
+  gotoOtherReport() {
     wx.navigateTo({
       url: "/pages/preReportList/preReportList",
     });
@@ -28,8 +29,8 @@ Page({
   onLoad(options) {
     //获取传过来的参数
     this.setData({
-      query: options,
-    });
+      query: options
+    })
     //获取屏幕高度
     let h = 770;
     wx.getSystemInfo({
@@ -37,9 +38,7 @@ Page({
         h = result.screenHeight;
       },
     });
-    this.setData({
-      h
-    });
+    this.h = h
     
   },
 
@@ -55,7 +54,7 @@ Page({
           timingFunction: "ease-in",
         });
         animation3
-          .translateY(-this.data.h * 2)
+          .translateY(-this.h * 2)
           .scale(0.5)
           .step();
         this.setData({

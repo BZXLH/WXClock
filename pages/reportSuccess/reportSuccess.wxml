@@ -15,7 +15,7 @@
     </view>
 
     <view class="btn">
-      <button id="otherReport" bindtap="GotoOtherReport">查看往期周报</button>
+      <button id="otherReport" bindtap="gotoOtherReport">查看往期周报</button>
       <button id="backButton" bindtap="goBack">返回</button>
     </view>
 

@@ -1,5 +1,5 @@
 // pages/weeklyReportSubmit/weeklyReportSubmit.js
-import checkLogin from '../../utils/checkLogin'
+import request from "../../api/request";
 
 Page({
 
@@ -7,12 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isUpload: false, //是否在上传周记
     weeklyReportContent: "", //要上传的周记内容
-    preWeeklyReportContent: "",//上一次上传成功的周记内容
-    query: {}//接收传参
+    isUpload: false, //是否在上传周记
   },
-    isLoading: false, //是否在加载
+  query: {},//接收传参
+  isLoading: false, //是否在加载
+  preWeeklyReportContent: "",//上一次上传成功的周记内容
 
   // 监听周记输入
   inputReport(e) {
@@ -22,14 +22,14 @@ Page({
   },
 
   // 上传周记
-  submit(e) {
+  async submit(e) {
     console.log(e);
     if (this.isLoading) {
-      console.log(1234);
       return
     }
 
-    const {weeklyReportContent, preWeeklyReportContent, isUpload} =  this.data
+    const { preWeeklyReportContent} =  this
+    const {weeklyReportContent, isUpload} = this.data
     this.setData({
       weeklyReportContent: weeklyReportContent.trim()
     })
@@ -38,49 +38,40 @@ Page({
     if (weeklyReportContent && !isUpload && weeklyReportContent != preWeeklyReportContent) {
       this.setData({
         isUpload: true
-      });
-      // 上传
-      wx.request({
-        url: 'https://philil.com.cn/clockin_app/api/weekReport',
-        method: 'POST',
-        header: {
-          'Authorization': this.data.query.token
-        },
-        data: {
-          content: this.data.weeklyReportContent
-        },
-        success: (res) => {
-            //成功     
-            //判断token有没有过期
-            if (res.data.code == 401) {
-            checkLogin();
-            return
-          }
-        if (res.statusCode == 200) {
-            this.setData({
-              isUpload: false,
-              preWeeklyReportContent: weeklyReportContent
-            })
-            wx.navigateTo({
-              url: `/pages/reportSuccess/reportSuccess?num=${res.data.data}`,
-            })
-          } else {
-            this.setData({
-              isUpload: false
-            })
-          }
-        },
-        fail: () => {
-          this.setData({
-            isUpload: false
-          })
-        },
-        complete: () => {
-          this.setData({
-            isUpload: false
-          })
-        }
       })
+      // 上传
+      try {
+        const result = await request({
+          url: '/weekReport',
+          method: 'POST',
+          data: {
+            content: this.data.weeklyReportContent
+          },  
+        })
+
+        console.log(result);
+        if (result.code == 200) {
+          this.preWeeklyReportContent = weeklyReportContent
+
+          wx.navigateTo({
+            url: `/pages/reportSuccess/reportSuccess?num=${result.data}`,
+          })
+
+          this.setData({
+            isUpload: false
+          })    
+  
+        } 
+
+      } catch (error) {
+        console.log(error);
+      }
+
+      this.setData({
+        isUpload: false
+      })    
+
+      
     }
   },
   
@@ -88,55 +79,50 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  async onLoad(options) {
+    console.log(1);
     //loading
-        this.isLoading = true;
-        wx.showLoading({
+    this.isLoading = true;
+    wx.showLoading({
       title: '加载中...',
     })
     
 
     // 接收导航传参
-    this.setData({
-      query: options,
-    });
+    this.query = options
 
     // 请求周记
-    wx.request({
-      url: `https://philil.com.cn/clockin_app/api/weekReport/${this.data.query.week}`,
-      method: 'GET',
-      header: {
-        'Authorization': this.data.query.token
-      },
-      success: (res) => {
-        //判断token有没有过期
-        if (res.statusCode == 401) {
-          checkLogin();
-          return
-        }
+    try {
+      const result = await request({
+        url: `/weekReport/${this.query.week}`,
+        method: 'GET',
+      })
 
-        if (res.statusCode == 200) {
-          this.setData({
-            weeklyReportContent: res.data.data,
-            preWeeklyReportContent: res.data.data
-          })
-        }
-      },
-      complete: () => {
-            this.isLoading = false;
-            wx.hideLoading({
-          success: () => {
-          },
-        })    
-      }
-    })      
+      console.log(result);
 
+      if (result.code == 200) {
+        this.setData({
+          weeklyReportContent: result.data,
+        })
+
+        this.preWeeklyReportContent =  result.data
+    }
+    } catch (error) {
+      console.log(error);
+    }
+
+    this.isLoading = false;
+    wx.hideLoading({})    
+
+
+   
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
+
   },
 
   /**
@@ -163,37 +149,34 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh() {
+  async onPullDownRefresh() {
     this.isLoading = true;
 
     // 请求周记
-    wx.request({
-      url: `https://philil.com.cn/clockin_app/api/weekReport/${this.data.query.week}`,
-      method: 'GET',
-      header: {
-        'Authorization': this.data.query.token
-      },
-      success: (res) => {
-        //判断token有没有过期
-        if (res.statusCode == 401) {
-          checkLogin();
-          return
-        }
+    try {
+      const result = await request({
+        url: `/weekReport/${this.query.week}`,
+        method: 'GET',
+      })
 
-        if (res.statusCode == 200) {
-          this.setData({
-            weeklyReportContent: res.data.data,
-            preWeeklyReportContent: res.data.data
-          })
-        }
-      },
-      complete: () => {
-        wx.stopPullDownRefresh()
-        this.isLoading = true;  
-      }
-    })      
+      if (result.code == 200) {
+        this.setData({
+          weeklyReportContent: result.data,
+        })
+
+        this.preWeeklyReportContent =  result.data
+    }
+    } catch (error) {
+      console.log(error);
+    }
+
+    wx.stopPullDownRefresh()
+    this.isLoading = false;
+
+    
 
   },
+
 
   /**
    * 页面上拉触底事件的处理函数

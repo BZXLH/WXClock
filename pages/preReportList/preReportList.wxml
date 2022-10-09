@@ -1,11 +1,11 @@
 
-<view class="noData" wx:if="{{!preReport[0]}}">
+<view class="noData" wx:if="{{!weekReports[0]}}">
   <image src="../../image/noPlan.png" class="noDataPic"></image>
   <view class="noDataInfo">暂时没有周报哟~</view>
 </view>
 
-<view class="reportList" wx:if="{{preReport[0]}}">
-  <view class="report" wx:for="{{preReport}}" wx:key="index" bindtap="Gotoreport"  data-week="{{item.week}}">
+<view class="reportList" wx:if="{{weekReports[0]}}">
+  <view class="report" wx:for="{{weekReports}}" wx:key="index" bindtap="gotoReport"  data-week="{{item.week}}">
     <view class="head" style="background: url({{avatar}}); background-size: cover;"></view>
     <view class="content">
       <view class="title">第{{item.week}}周周报</view>

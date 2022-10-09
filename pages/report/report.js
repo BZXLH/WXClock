@@ -1,19 +1,18 @@
 // pages/report/report.js
-import checkLogin from "../../utils/checkLogin";
+import request from "../../api/request";
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    week: 0, //周次
     completedPlan: [], //完成的计划
     preWeeklyReportContent: "", //请求获取的周记内容
-    token: "", //token
     clockCount: 0, //打卡次数
     studyDuration: 0, //学习时长
     finishedTaskCount: 0,
   },
 
+  week: 0, //周次
   isLoading: false,//是否在加载
 
 
@@ -23,14 +22,15 @@ Page({
       return
     }
 
-    wx.navigateTo({
-      url: `/pages/weeklyReportSubmit/weeklyReportSubmit?week=${this.data.week}&token=${this.data.token}`,
-    });
+  wx.navigateTo({
+    url: `/pages/weeklyReportSubmit/weeklyReportSubmit?week=${this.week}`,
+  });
 
+  console.log(1);
   },
 
   //往期周波
-  GotoOtherReport() {
+  gotoOtherReport() {
     if (this.isLoading) {
       return
     }
@@ -43,12 +43,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-
-    // const reg = new RegExp("\d+[.]\d", "g") 
-    // const res = str.match(reg)
-    // console.log(res);
+  onLoad: async function (options) {
 
     //loading
     this.isLoading = true
@@ -65,75 +60,47 @@ Page({
         : date.getMonth() + 1;
     const day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
     const time = `${year}-${month}-${day}`;
-    //拿token
-    wx.getStorage({
-      key: "token",
-      success: (res) => {
+
+    //请求内容
+    try {
+      const weekData = await request({
+        url: "/weekReport/getWeek",
+        method: "GET",
+        data: {
+          date: time,
+        }
+      });
+  
+      this.week = weekData.data
+      const {week} = this
+
+      const reportData = await request({
+        url: "/weekReport/getWeekInfo",
+        method: "GET",
+        data: {
+          week
+        }
+      })
+  
+      if (reportData.code == 200) {
+        const {clockNum, studyDuration, finishedTaskNum, finishedTask, weekReport} = reportData.data;
         this.setData({
-          token: res.data,
+          completedPlan: finishedTask,
+          preWeeklyReportContent: weekReport,
+          clockCount: clockNum, //打卡次数
+          studyDuration, //学习时长
+          finishedTaskCount: finishedTaskNum,                            
         });
-        // 拿周次
-        wx.request({
-          url: "https://philil.com.cn/clockin_app/api//weekReport/getWeek",
-          method: "GET",
-          header: {
-            Authorization: this.data.token,
-          },
-          data: {
-            date: time,
-          },
-          success: (res) => {
-            //判断token有没有过期
-            if (res.statusCode == 401) {
-              checkLogin();
-              return;
-            }
-            this.setData({
-              week: res.data.data,
-            });
-            // 请求内容
-            wx.request({
-              url: 'https://philil.com.cn/clockin_app/api//weekReport/getWeekInfo',
-              method: "GET",
-              header: {
-                Authorization: this.data.token,
-              },
-              data: {
-               week: this.data.week
-              },
-              success: (res) => {
+      }
+  
+    } catch (error) {
+      console.log(error);
+    }
 
-                if (res.statusCode == 401) {
-                  checkLogin();
-                  return;    
-                }
-
-                if (res.data.code == 200) {
-                  const {clockNum, studyDuration, finishedTaskNum, finishedTask, weekReport} = res.data.data;
-                  this.setData({
-                    completedPlan: finishedTask,
-                    preWeeklyReportContent: weekReport,
-                    clockCount: clockNum, //打卡次数
-                    studyDuration, //学习时长
-                    finishedTaskCount: finishedTaskNum,                            
-                  });
-
-                }
-              },
-              complete: () => {    
-                //关闭loading
-                wx.hideLoading({})
-                this.isLoading = false
-              }
-            })
-          },
-
-          fail: (res) => {
-            console.log(res);
-          }
-        });
-      },
-    });
+    //关闭loading
+    wx.hideLoading({})
+    this.isLoading = false
+    
   },
 
   /**
@@ -160,42 +127,41 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh() {
-    this.isLoading = true
-    // 请求内容
-    wx.request({
-      url: 'https://philil.com.cn/clockin_app/api//weekReport/getWeekInfo',
-      method: "GET",
-      header: {
-        Authorization: this.data.token,
-      },
-      data: {
-        week: this.data.week
-      },
-      success: (res) => {
-        if (res.statusCode == 401) {
-          checkLogin();
-          return;    
-        }
+  async onPullDownRefresh() {
+    this.isLoading = true;
+    
+    //获取周次
+    const {week} = this
 
-        if (res.data.code == 200) {
-          const {clockNum, studyDuration, finishedTaskNum, finishedTask, weekReport} = res.data.data;
-          this.setData({
-            completedPlan: finishedTask,
-            preWeeklyReportContent: weekReport,
-            clockCount: clockNum, //打卡次数
-            studyDuration, //学习时长
-            finishedTaskCount: finishedTaskNum,                            
-          });
-
+    //请求内容
+    try {
+      const reportData = await request({
+        url: "/weekReport/getWeekInfo",
+        method: "GET",
+        data: {
+          week
         }
-      },
-      complete: () => {
-        wx.stopPullDownRefresh();
-        this.isLoading = false
+      })
+  
+
+      if (reportData.code == 200) {
+        const {clockNum, studyDuration, finishedTaskNum, finishedTask, weekReport} = reportData.data;
+        this.setData({
+          completedPlan: finishedTask,
+          preWeeklyReportContent: weekReport,
+          clockCount: clockNum, //打卡次数
+          studyDuration, //学习时长
+          finishedTaskCount: finishedTaskNum,                            
+        });
       }
-    })
 
+    } catch (error) {
+      console.log(error);
+    }
+
+
+    wx.stopPullDownRefresh();//关闭下拉刷新
+    this.isLoading = false//关闭阀门
 
   },
 

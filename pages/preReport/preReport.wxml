@@ -75,7 +75,7 @@
       <view class="weeklyReportError" wx:if="{{!preWeeklyReportContent}}">您这周没有填写周记</view>
   </view>
 
-  <view class="btn"  bindtap="GoBack">
+  <view class="btn"  bindtap="goBack">
     <button id="backBtn">返回</button>
   </view>
 </view>
